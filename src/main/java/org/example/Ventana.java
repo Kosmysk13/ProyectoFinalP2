@@ -2,6 +2,8 @@ package org.example;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * Crea la ventana que va a ver el Cliente, contiene el panel principal
@@ -16,10 +18,11 @@ public class Ventana extends JFrame{
         super("Sistema de reserva de asientos");
         this.setLayout(new BorderLayout());
         dp = new PanelPrincipal();
-        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.add(dp);
+        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setSize(1280,1024);
         setLocationRelativeTo(null);
         this.setVisible(true);
+
     }
 }
