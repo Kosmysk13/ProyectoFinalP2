@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db516c12-abac-4e8e-b482-ebdaf0db48a9" name="Changes" comment="Creación de Proyecto Final">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/lupa.png" afterDir="false" />
+    <list default="true" id="db516c12-abac-4e8e-b482-ebdaf0db48a9" name="Changes" comment="Creación de menus desplegables para recorridos y boton de busqueda">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PanelPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/PanelPrincipal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Ventana.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Ventana.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,11 +76,19 @@
       <option name="project" value="LOCAL" />
       <updated>1686007788915</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Creación de menus desplegables para recorridos y boton de busqueda">
+      <created>1686017203754</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1686017203754</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Creación de Proyecto Final" />
-    <option name="LAST_COMMIT_MESSAGE" value="Creación de Proyecto Final" />
+    <MESSAGE value="Creación de menus desplegables para recorridos y boton de busqueda" />
+    <option name="LAST_COMMIT_MESSAGE" value="Creación de menus desplegables para recorridos y boton de busqueda" />
   </component>
 </project>
