@@ -16,11 +16,12 @@ public class PanelPrincipal extends JPanel implements ActionListener{
     private JRadioButton[] horarios;
     private ButtonGroup horariosG;
     private JLabel textAsientos,textHorarios;
-    private String[] ciudadOrigen,ciudadDestino;
+    private JPanel PanelRecorridos,PanelAsientos,PanelHorarios;
+    private String[] ciudadOrigen,ciudadDestino,pisosB;
     private String auxrec;
-    private boolean auxBus=true,auxAsientos,auxElegirH;
+    private boolean auxBus=true,auxAsientos;
     private boolean[] ocupado;
-    private int hora=12,auxHorarios;
+    private int hora=12,auxHorarios,auxPiso=1,auxElegirH=0;
     /**
      * Metodo constructor que crea instancias del panel comprador y panel expendedor
      * Ademas define los limites del panel
@@ -32,29 +33,30 @@ public class PanelPrincipal extends JPanel implements ActionListener{
 
         ciudadOrigen = new String[] {String.valueOf(Recorridos.SANTIAGO),String.valueOf(Recorridos.CONCEPCION),String.valueOf(Recorridos.CHILLAN),String.valueOf(Recorridos.LOS_ANGELES)};
         ciudadDestino = new String[] {String.valueOf(Recorridos.SANTIAGO),String.valueOf(Recorridos.CONCEPCION),String.valueOf(Recorridos.CHILLAN),String.valueOf(Recorridos.LOS_ANGELES)};
+        pisosB = new String[] {"PRIMER   PISO","SEGUNDO   PISO"};
+
         origen = new JComboBox(ciudadOrigen);
         origen.addActionListener(this);
-        origen.setBounds(200,50,300,50);
+        origen.setBounds(100,70,400,50);
         origen.setFocusable(false);
         this.add(origen);
         destino = new JComboBox(ciudadDestino);
         destino.addActionListener(this);
-        destino.setBounds(550,50,300,50);
+        destino.setBounds(550,70,400,50);
         destino.setFocusable(false);
         this.add(destino);
-
-        pisoBus = new JComboBox(ciudadOrigen);
-        pisoBus.addActionListener(this);
-        pisoBus.setBounds(200,50,300,50);
-        pisoBus.setFocusable(false);
-        this.add(pisoBus);
-
         busqueda = new JButton("   BUSCAR");
-        busqueda.setBounds(900,50,120,50);
+        busqueda.setBounds(1000,70,120,50);
         busqueda.setIcon(new ImageIcon("src/main/lupa.png"));
         busqueda.addActionListener(this);
         busqueda.setFocusable(false);
         this.add(busqueda);
+
+        pisoBus = new JComboBox(pisosB);
+        pisoBus.addActionListener(this);
+        pisoBus.setBounds(500,274,700,75);
+        pisoBus.setFocusable(false);
+        this.add(pisoBus);
 
         ConfirmarPago = new JButton("Confirmar Pago");
         ConfirmarPago.setBounds(1000,750,200,50);
@@ -68,12 +70,27 @@ public class PanelPrincipal extends JPanel implements ActionListener{
         this.add(ElegirHorario);
 
         textAsientos = new JLabel("Asientos");
-        textAsientos.setBounds(800,274,100,50);
+        textAsientos.setBounds(800,224,100,50);
         this.add(textAsientos);
-
         textHorarios = new JLabel("Horarios");
-        textHorarios.setBounds(175,254,100,50);
+        textHorarios.setBounds(175,224,100,50);
         this.add(textHorarios);
+
+        PanelRecorridos = new JPanel();
+        PanelRecorridos.setBounds(50,25, 1150, 150);
+        PanelRecorridos.setBackground(new Color(99, 132, 180));
+        PanelRecorridos.setVisible(true);
+        this.add(PanelRecorridos);
+        PanelAsientos = new JPanel();
+        PanelAsientos.setBounds(500,224, 700, 50);
+        PanelAsientos.setBackground(new Color(99, 132, 180));
+        PanelAsientos.setVisible(true);
+        this.add(PanelAsientos);
+        PanelHorarios = new JPanel();
+        PanelHorarios.setBounds(50,224, 300, 50);
+        PanelHorarios.setBackground(new Color(99, 132, 180));
+        PanelHorarios.setVisible(true);
+        this.add(PanelHorarios);
 
         horarios = new JRadioButton[8];
         horariosG = new ButtonGroup();
@@ -88,16 +105,18 @@ public class PanelPrincipal extends JPanel implements ActionListener{
      */
     public void paint (Graphics g){
         super.paint(g);
-        g.setColor(Color.white);
-        g.fillRect(500,324, 700, 400);                               //Panel Asientos
         g.setColor(Color.black);
-        g.drawRect(500,274, 700, 450);                               //Panel asientos Borde
-        g.drawLine(500,324,1200,324);
+        g.drawRect(50,25, 1150, 150);                               //Panel Recorrido Borde
         g.setColor(Color.white);
-        g.fillRect(50,304, 300, 420);                               //Panel Horarios
+        g.fillRect(500,349, 700, 375);                               //Panel Asientos
         g.setColor(Color.black);
-        g.drawRect(50,254, 300, 470);                               //Panel Horarios Borde
-        g.drawLine(50,304,350,304);
+        g.drawRect(500,224, 700, 500);                               //Panel asientos Borde
+        g.drawLine(500,274,1200,274);
+        g.setColor(Color.white);
+        g.fillRect(50,274, 300, 450);                               //Panel Horarios
+        g.setColor(Color.black);
+        g.drawRect(50,224, 300, 500);                               //Panel Horarios Borde
+        g.drawLine(50,274,350,274);
     }
 
     @Override
@@ -112,7 +131,7 @@ public class PanelPrincipal extends JPanel implements ActionListener{
         if (e.getSource()==busqueda){
             for (int i=0;i<8;i++){
                 horarios[i] = new JRadioButton("SALIDA: "+(hora+i)+":00 - LLEGADA: "+(hora+i+2)+":00");
-                horarios[i].setBounds(100,315+(50*i),250,50);
+                horarios[i].setBounds(100,285+(55*i),250,50);
                 horarios[i].setBackground(Color.white);
                 horarios[i].setVisible(auxBus);
                 horarios[i].setFocusable(false);
@@ -135,65 +154,110 @@ public class PanelPrincipal extends JPanel implements ActionListener{
                         }
                     }
                 }
-                auxElegirH=true;
+                auxElegirH=1;
             }
         }
         if (e.getSource()==ElegirHorario){
-            if (auxElegirH==true){
-                if (auxHorarios<4){
-                    auxAsientos = false;
-                    for (int k=0;k<36;k=k+4){
-                        for (int j=0;j<2;j++){
-                            asientos[k+j] = new JButton();
-                            asientos[k+j].setBounds(598+(65*(k/4)),410+(60*j),50,50);
-                            asientos[k+j].setBackground(Color.white);
-                            asientos[k+j].addActionListener(this);
-                            asientos[k+j].setFocusable(false);
-                            asientos[k+j].setIcon(new ImageIcon("src/main/asientoSCLibre.png"));
-                            this.add(asientos[k+j]);
+            if (auxElegirH==1){
+                auxAsientos = true;
+                for (int k=0;k<36;k=k+4){
+                    for (int j=0;j<2;j++){
+                        asientos[k+j] = new JButton();                                            //Asiento Premium
+                        asientos[k+j].setBounds(598+(118*(k/8)),410,103,50);
+                        asientos[k+j].setBackground(Color.white);
+                        asientos[k+j].addActionListener(this);
+                        asientos[k+j].setFocusable(false);
+                        asientos[k+j].setIcon(new ImageIcon("src/main/asientoPLibre.png"));
+                        this.add(asientos[k+j]);
 
-                            asientos[k+j+2] = new JButton();
-                            asientos[k+j+2].setBounds(598+(65*(k/4)),570+(60*j),50,50);
-                            asientos[k+j+2].setBackground(Color.white);
-                            asientos[k+j+2].addActionListener(this);
-                            asientos[k+j+2].setFocusable(false);
-                            asientos[k+j+2].setIcon(new ImageIcon("src/main/asientoSCLibre.png"));
-                            this.add(asientos[k+j+2]);
+                        asientos[k+j+2] = new JButton();                                          //Asiento Cama
+                        asientos[k+j+2].setBounds(598+(96*(k/6)),570+(60*j),81,50);
+                        asientos[k+j+2].setBackground(Color.white);
+                        asientos[k+j+2].addActionListener(this);
+                        asientos[k+j+2].setFocusable(false);
+                        asientos[k+j+2].setIcon(new ImageIcon("src/main/asientoCLibre.png"));
+                        this.add(asientos[k+j+2]);
 
-                            ocupado[k+j]=false;
-                            ocupado[k+j+2]=false;
-                        }
+                        ocupado[k+j]=false;
+                        ocupado[k+j+2]=false;
                     }
-                }else{
-                    auxAsientos = true;
+                }
+                auxElegirH=2;
+            }
+        }
+        if (e.getSource()==pisoBus){
+            if ((pisoBus.getSelectedItem()=="PRIMER   PISO")&&(auxPiso==2)&&(auxElegirH==2)){
+                for (int k=0;k<36;k=k+4){
+                    for (int j=0;j<2;j++){
+                        this.remove(asientos[k+j]);
+                        this.remove(asientos[k+j+2]);
+                        ocupado[k+j]=true;
+                        ocupado[k+j+2]=true;
+                        repaint();
+                    }
+                }
+                for (int k=0;k<36;k=k+4){
+                    for (int j=0;j<2;j++){
+                        asientos[k+j] = new JButton();                                            //Asiento Premium
+                        asientos[k+j].setBounds(598+(118*(k/8)),410,103,50);
+                        asientos[k+j].setBackground(Color.white);
+                        asientos[k+j].addActionListener(this);
+                        asientos[k+j].setFocusable(false);
+                        asientos[k+j].setIcon(new ImageIcon("src/main/asientoPLibre.png"));
+                        this.add(asientos[k+j]);
+
+                        asientos[k+j+2] = new JButton();                                          //Asiento Cama
+                        asientos[k+j+2].setBounds(598+(96*(k/6)),570+(60*j),81,50);
+                        asientos[k+j+2].setBackground(Color.white);
+                        asientos[k+j+2].addActionListener(this);
+                        asientos[k+j+2].setFocusable(false);
+                        asientos[k+j+2].setIcon(new ImageIcon("src/main/asientoCLibre.png"));
+                        this.add(asientos[k+j+2]);
+
+                        ocupado[k+j]=false;
+                        ocupado[k+j+2]=false;
+                    }
+                }
+                auxPiso=1;
+            }else if ((pisoBus.getSelectedItem()=="SEGUNDO   PISO")&&(auxPiso==1)&&(auxElegirH==2)){
+                if (asientos[0]!=null){
                     for (int k=0;k<36;k=k+4){
                         for (int j=0;j<2;j++){
-                            asientos[k+j] = new JButton();                                            //Asiento Premium
-                            asientos[k+j].setBounds(598+(118*(k/8)),410,103,50);
-                            asientos[k+j].setBackground(Color.white);
-                            asientos[k+j].addActionListener(this);
-                            asientos[k+j].setFocusable(false);
-                            asientos[k+j].setIcon(new ImageIcon("src/main/asientoPLibre.png"));
-                            this.add(asientos[k+j]);
-
-                            asientos[k+j+2] = new JButton();                                          //Asiento Cama
-                            asientos[k+j+2].setBounds(598+(96*(k/6)),570+(60*j),81,50);
-                            asientos[k+j+2].setBackground(Color.white);
-                            asientos[k+j+2].addActionListener(this);
-                            asientos[k+j+2].setFocusable(false);
-                            asientos[k+j+2].setIcon(new ImageIcon("src/main/asientoCLibre.png"));
-                            this.add(asientos[k+j+2]);
-
-                            ocupado[k+j]=false;
-                            ocupado[k+j+2]=false;
+                            this.remove(asientos[k+j]);
+                            this.remove(asientos[k+j+2]);
+                            ocupado[k+j]=true;
+                            ocupado[k+j+2]=true;
+                            repaint();
                         }
                     }
                 }
-                auxElegirH=false;
+                for (int k=0;k<36;k=k+4){
+                    for (int j=0;j<2;j++){
+                        asientos[k+j] = new JButton();
+                        asientos[k+j].setBounds(598+(65*(k/4)),410+(60*j),50,50);
+                        asientos[k+j].setBackground(Color.white);
+                        asientos[k+j].addActionListener(this);
+                        asientos[k+j].setFocusable(false);
+                        asientos[k+j].setIcon(new ImageIcon("src/main/asientoSCLibre.png"));
+                        this.add(asientos[k+j]);
+
+                        asientos[k+j+2] = new JButton();
+                        asientos[k+j+2].setBounds(598+(65*(k/4)),570+(60*j),50,50);
+                        asientos[k+j+2].setBackground(Color.white);
+                        asientos[k+j+2].addActionListener(this);
+                        asientos[k+j+2].setFocusable(false);
+                        asientos[k+j+2].setIcon(new ImageIcon("src/main/asientoSCLibre.png"));
+                        this.add(asientos[k+j+2]);
+
+                        ocupado[k+j]=false;
+                        ocupado[k+j+2]=false;
+                    }
+                }
+                auxPiso=2;
             }
         }
         for (int i=0;i<36;i++){
-            if (auxAsientos==false){
+            if (auxPiso==2){
                 if (e.getSource()==asientos[i]){
                     if (ocupado[i]==false){
                         asientos[i].setIcon(new ImageIcon("src/main/asientoSCOcupado.png"));

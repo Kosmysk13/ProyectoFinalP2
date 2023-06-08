@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db516c12-abac-4e8e-b482-ebdaf0db48a9" name="Changes" comment="Se agregan diferentes tipos de asientos y boton para elegir horario. Cuando se presiona boton se muestran los asientos para ese horario">
+    <list default="true" id="db516c12-abac-4e8e-b482-ebdaf0db48a9" name="Changes" comment="Se fixea problema con boton ElegirHorario, ya no permite multiples usos">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PanelPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/PanelPrincipal.java" afterDir="false" />
     </list>
@@ -16,8 +16,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -135,7 +135,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686192056653</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Se fixea problema con boton ElegirHorario, ya no permite multiples usos">
+      <created>1686192654604</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1686192654604</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -148,6 +155,7 @@
     <MESSAGE value="Se implementa funcion de asiento libre y ocupado" />
     <MESSAGE value="Se cambia de nombre a archivos y se crean clases asiento y PanelAsientos vacias" />
     <MESSAGE value="Se agregan diferentes tipos de asientos y boton para elegir horario. Cuando se presiona boton se muestran los asientos para ese horario" />
-    <option name="LAST_COMMIT_MESSAGE" value="Se agregan diferentes tipos de asientos y boton para elegir horario. Cuando se presiona boton se muestran los asientos para ese horario" />
+    <MESSAGE value="Se fixea problema con boton ElegirHorario, ya no permite multiples usos" />
+    <option name="LAST_COMMIT_MESSAGE" value="Se fixea problema con boton ElegirHorario, ya no permite multiples usos" />
   </component>
 </project>
