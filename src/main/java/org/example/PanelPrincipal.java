@@ -13,14 +13,16 @@ public class PanelPrincipal extends JPanel implements ActionListener{
     private JComboBox origen,destino;
     private JButton busqueda,ConfirmarPago;
     private JButton asiento1,asiento2,asiento3,asiento4;
-    private JRadioButton horario1,horario2,horario3,horario4,horario5,horario6;
-    private JRadioButtonMenuItem horarios;
+    private JButton[] asientos;
+    private JRadioButton[] horarios;
+    private ButtonGroup horariosG;
     private JLabel textAsientos,textHorarios;
     private String[] ciudadOrigen,ciudadDestino;
     private String auxrec;
     private Icon a;
     private Icon asientoIcon;
     private boolean auxBus=true;
+    private int hora=12;
     /**
      * Metodo constructor que crea instancias del panel comprador y panel expendedor
      * Ademas define los limites del panel
@@ -64,44 +66,8 @@ public class PanelPrincipal extends JPanel implements ActionListener{
         textHorarios.setBounds(175,324,100,50);
         this.add(textHorarios);
 
-        horario1 = new JRadioButton("SALIDA: 12:00 - LLEGADA: 14:00");
-        horario1.setBounds(100,384,250,50);
-        horario1.setBackground(Color.white);
-        horario1.setVisible(auxBus);
-        horario2 = new JRadioButton("SALIDA: 13:00 - LLEGADA: 15:00");
-        horario2.setBounds(100,434,250,50);
-        horario2.setBackground(Color.white);
-        horario2.setVisible(auxBus);
-        horario3 = new JRadioButton("SALIDA: 14:00 - LLEGADA: 16:00");
-        horario3.setBounds(100,484,250,50);
-        horario3.setBackground(Color.white);
-        horario3.setVisible(auxBus);
-        horario4 = new JRadioButton("SALIDA: 15:00 - LLEGADA: 17:00");
-        horario4.setBounds(100,534,250,50);
-        horario4.setBackground(Color.white);
-        horario4.setVisible(auxBus);
-        horario5 = new JRadioButton("SALIDA: 16:00 - LLEGADA: 18:00");
-        horario5.setBounds(100,584,250,50);
-        horario5.setBackground(Color.white);
-        horario5.setVisible(auxBus);
-        horario6 = new JRadioButton("SALIDA: 17:00 - LLEGADA: 19:00");
-        horario6.setBounds(100,634,250,50);
-        horario6.setBackground(Color.white);
-        horario6.setVisible(auxBus);
-        horarios = new JRadioButtonMenuItem();
-        horarios.add(horario1);
-        horarios.add(horario2);
-        horarios.add(horario3);
-        horarios.add(horario4);
-        horarios.add(horario5);
-        horarios.add(horario6);
-        this.add(horario1);
-        this.add(horario2);
-        this.add(horario3);
-        this.add(horario4);
-        this.add(horario5);
-        this.add(horario6);
-        this.add(horarios);
+        horarios = new JRadioButton[6];
+        horariosG = new ButtonGroup();
 
         asientoIcon = new ImageIcon("src/main/asientoHLibre.png");
 
@@ -172,7 +138,16 @@ public class PanelPrincipal extends JPanel implements ActionListener{
             destino.removeItem(origen.getSelectedItem());
         }
         if (e.getSource()==busqueda){
-            auxBus=true;
+            for (int i=0;i<6;i++){
+                horarios[i] = new JRadioButton("SALIDA: "+(hora+i)+":00 - LLEGADA: "+(hora+i+2)+":00");
+                horarios[i].setBounds(100,392+(50*i),250,50);
+                horarios[i].setBackground(Color.white);
+                horarios[i].setVisible(auxBus);
+                horarios[i].setFocusable(false);
+                horarios[i].addActionListener(this);
+                horariosG.add(horarios[i]);
+                this.add(horarios[i]);
+            }
             repaint();
         }
         if (e.getSource()==asiento1){
