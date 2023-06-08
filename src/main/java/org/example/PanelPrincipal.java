@@ -70,39 +70,26 @@ public class PanelPrincipal extends JPanel implements ActionListener{
         horariosG = new ButtonGroup();
 
         asientoIcon = new ImageIcon("src/main/asientoHLibre.png");
+        asientos = new JButton[40];
+        for (int i=0;i<36;i=i+4){
+            for (int j=0;j<2;j++){
+                asientos[i+j] = new JButton();
+                asientos[i+j].setBounds(598+(65*(i/4)),410+(60*j),50,50);
+                asientos[i+j].setBackground(Color.white);
+                asientos[i+j].addActionListener(this);
+                asientos[i+j].setFocusable(false);
+                asientos[i+j].setIcon(asientoIcon);
+                this.add(asientos[i+j]);
 
-        asiento1 = new JButton();
-        asiento1.setBounds(598,410,50,50);
-        asiento1.setBackground(Color.white);
-        asiento1.addActionListener(this);
-        asiento1.setFocusable(false);
-        asiento1.setIcon(asientoIcon);
-
-        asiento2 = new JButton();
-        asiento2.setBounds(598,470,50,50);
-        asiento2.setBackground(Color.white);
-        asiento2.addActionListener(this);
-        asiento2.setFocusable(false);
-        asiento2.setIcon(new ImageIcon("src/main/asientoHOcupado.png"));
-
-        asiento3 = new JButton();
-        asiento3.setBounds(598,570,50,50);
-        asiento3.setBackground(Color.white);
-        asiento3.addActionListener(this);
-        asiento3.setFocusable(false);
-        asiento3.setIcon(new ImageIcon("src/main/asientoHOcupado.png"));
-
-        asiento4 = new JButton();
-        asiento4.setBounds(598,630,50,50);
-        asiento4.setBackground(Color.white);
-        asiento4.addActionListener(this);
-        asiento4.setFocusable(false);
-        asiento4.setIcon(new ImageIcon("src/main/asientoHOcupado.png"));
-
-        this.add(asiento1);
-        this.add(asiento2);
-        this.add(asiento3);
-        this.add(asiento4);
+                asientos[i+j+2] = new JButton();
+                asientos[i+j+2].setBounds(598+(65*(i/4)),570+(60*j),50,50);
+                asientos[i+j+2].setBackground(Color.white);
+                asientos[i+j+2].addActionListener(this);
+                asientos[i+j+2].setFocusable(false);
+                asientos[i+j+2].setIcon(asientoIcon);
+                this.add(asientos[i+j+2]);
+            }
+        }
     }
 
     /**
@@ -121,11 +108,6 @@ public class PanelPrincipal extends JPanel implements ActionListener{
         g.setColor(Color.black);
         g.drawRect(50,324, 300, 400);                               //Panel Horarios Borde
         g.drawLine(50,374,350,374);
-        g.drawRect(599,409,51,51);
-        g.drawRect(599,469,51,51);
-        g.drawRect(599,569,51,51);
-        g.drawRect(599,629,51,51);
-        g.setColor(Color.white);
     }
 
     @Override

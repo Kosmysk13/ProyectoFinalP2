@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db516c12-abac-4e8e-b482-ebdaf0db48a9" name="Changes" comment="Se crean horarios hipoteticos e iconos de asientos libres y ocupados">
+    <list default="true" id="db516c12-abac-4e8e-b482-ebdaf0db48a9" name="Changes" comment="Se optimiza creacion de horarios y se agrega funcionalidad al boton de buscar.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PanelPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/PanelPrincipal.java" afterDir="false" />
     </list>
@@ -100,7 +100,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686126706264</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Se optimiza creacion de horarios y se agrega funcionalidad al boton de buscar.">
+      <created>1686183102241</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1686183102241</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -108,6 +115,7 @@
     <MESSAGE value="Creación de menus desplegables para recorridos y boton de busqueda" />
     <MESSAGE value="Se ajustan paneles de asientos, horarios y botones menu de los recorridos. Se agrega boton para simular pago" />
     <MESSAGE value="Se crean horarios hipoteticos e iconos de asientos libres y ocupados" />
-    <option name="LAST_COMMIT_MESSAGE" value="Se crean horarios hipoteticos e iconos de asientos libres y ocupados" />
+    <MESSAGE value="Se optimiza creacion de horarios y se agrega funcionalidad al boton de buscar." />
+    <option name="LAST_COMMIT_MESSAGE" value="Se optimiza creacion de horarios y se agrega funcionalidad al boton de buscar." />
   </component>
 </project>
