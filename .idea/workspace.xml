@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db516c12-abac-4e8e-b482-ebdaf0db48a9" name="Changes" comment="Se implementa funcion de asiento libre y ocupado">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Asiento.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/PanelAsientos.java" afterDir="false" />
+    <list default="true" id="db516c12-abac-4e8e-b482-ebdaf0db48a9" name="Changes" comment="Se cambia de nombre a archivos y se crean clases asiento y PanelAsientos vacias">
+      <change afterPath="$PROJECT_DIR$/src/main/asientoCLibre.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/asientoCOcupado.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/asientoPLibre.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/asientoPOcupado.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/asientoHLibre.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/asientoSCLibre.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/asientoHOcupado.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/asientoSCOcupado.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PanelPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/PanelPrincipal.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -125,7 +125,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686185499407</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Se cambia de nombre a archivos y se crean clases asiento y PanelAsientos vacias">
+      <created>1686186899539</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1686186899539</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -136,6 +143,7 @@
     <MESSAGE value="Se optimiza creacion de horarios y se agrega funcionalidad al boton de buscar." />
     <MESSAGE value="Se crean asientos mediante ciclo for" />
     <MESSAGE value="Se implementa funcion de asiento libre y ocupado" />
-    <option name="LAST_COMMIT_MESSAGE" value="Se implementa funcion de asiento libre y ocupado" />
+    <MESSAGE value="Se cambia de nombre a archivos y se crean clases asiento y PanelAsientos vacias" />
+    <option name="LAST_COMMIT_MESSAGE" value="Se cambia de nombre a archivos y se crean clases asiento y PanelAsientos vacias" />
   </component>
 </project>
