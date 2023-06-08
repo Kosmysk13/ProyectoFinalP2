@@ -10,7 +10,7 @@ import java.awt.event.ActionListener;
  * paneles para mostrarse en uno solo para la Ventana
  */
 public class PanelPrincipal extends JPanel implements ActionListener{
-    private JComboBox origen,destino;
+    private JComboBox origen,destino,pisoBus;
     private JButton busqueda,ConfirmarPago,ElegirHorario;
     private JButton[] asientos;
     private JRadioButton[] horarios;
@@ -18,7 +18,7 @@ public class PanelPrincipal extends JPanel implements ActionListener{
     private JLabel textAsientos,textHorarios;
     private String[] ciudadOrigen,ciudadDestino;
     private String auxrec;
-    private boolean auxBus=true,auxAsientos;
+    private boolean auxBus=true,auxAsientos,auxElegirH;
     private boolean[] ocupado;
     private int hora=12,auxHorarios;
     /**
@@ -43,6 +43,12 @@ public class PanelPrincipal extends JPanel implements ActionListener{
         destino.setFocusable(false);
         this.add(destino);
 
+        pisoBus = new JComboBox(ciudadOrigen);
+        pisoBus.addActionListener(this);
+        pisoBus.setBounds(200,50,300,50);
+        pisoBus.setFocusable(false);
+        this.add(pisoBus);
+
         busqueda = new JButton("   BUSCAR");
         busqueda.setBounds(900,50,120,50);
         busqueda.setIcon(new ImageIcon("src/main/lupa.png"));
@@ -62,7 +68,7 @@ public class PanelPrincipal extends JPanel implements ActionListener{
         this.add(ElegirHorario);
 
         textAsientos = new JLabel("Asientos");
-        textAsientos.setBounds(800,324,100,50);
+        textAsientos.setBounds(800,274,100,50);
         this.add(textAsientos);
 
         textHorarios = new JLabel("Horarios");
@@ -83,10 +89,10 @@ public class PanelPrincipal extends JPanel implements ActionListener{
     public void paint (Graphics g){
         super.paint(g);
         g.setColor(Color.white);
-        g.fillRect(500,374, 700, 350);                               //Panel Asientos
+        g.fillRect(500,324, 700, 400);                               //Panel Asientos
         g.setColor(Color.black);
-        g.drawRect(500,324, 700, 400);                               //Panel asientos Borde
-        g.drawLine(500,374,1200,374);
+        g.drawRect(500,274, 700, 450);                               //Panel asientos Borde
+        g.drawLine(500,324,1200,324);
         g.setColor(Color.white);
         g.fillRect(50,304, 300, 420);                               //Panel Horarios
         g.setColor(Color.black);
@@ -129,57 +135,61 @@ public class PanelPrincipal extends JPanel implements ActionListener{
                         }
                     }
                 }
+                auxElegirH=true;
             }
         }
         if (e.getSource()==ElegirHorario){
-            if (auxHorarios<4){
-                auxAsientos = false;
-                for (int k=0;k<36;k=k+4){
-                    for (int j=0;j<2;j++){
-                        asientos[k+j] = new JButton();
-                        asientos[k+j].setBounds(598+(65*(k/4)),410+(60*j),50,50);
-                        asientos[k+j].setBackground(Color.white);
-                        asientos[k+j].addActionListener(this);
-                        asientos[k+j].setFocusable(false);
-                        asientos[k+j].setIcon(new ImageIcon("src/main/asientoSCLibre.png"));
-                        this.add(asientos[k+j]);
+            if (auxElegirH==true){
+                if (auxHorarios<4){
+                    auxAsientos = false;
+                    for (int k=0;k<36;k=k+4){
+                        for (int j=0;j<2;j++){
+                            asientos[k+j] = new JButton();
+                            asientos[k+j].setBounds(598+(65*(k/4)),410+(60*j),50,50);
+                            asientos[k+j].setBackground(Color.white);
+                            asientos[k+j].addActionListener(this);
+                            asientos[k+j].setFocusable(false);
+                            asientos[k+j].setIcon(new ImageIcon("src/main/asientoSCLibre.png"));
+                            this.add(asientos[k+j]);
 
-                        asientos[k+j+2] = new JButton();
-                        asientos[k+j+2].setBounds(598+(65*(k/4)),570+(60*j),50,50);
-                        asientos[k+j+2].setBackground(Color.white);
-                        asientos[k+j+2].addActionListener(this);
-                        asientos[k+j+2].setFocusable(false);
-                        asientos[k+j+2].setIcon(new ImageIcon("src/main/asientoSCLibre.png"));
-                        this.add(asientos[k+j+2]);
+                            asientos[k+j+2] = new JButton();
+                            asientos[k+j+2].setBounds(598+(65*(k/4)),570+(60*j),50,50);
+                            asientos[k+j+2].setBackground(Color.white);
+                            asientos[k+j+2].addActionListener(this);
+                            asientos[k+j+2].setFocusable(false);
+                            asientos[k+j+2].setIcon(new ImageIcon("src/main/asientoSCLibre.png"));
+                            this.add(asientos[k+j+2]);
 
-                        ocupado[k+j]=false;
-                        ocupado[k+j+2]=false;
+                            ocupado[k+j]=false;
+                            ocupado[k+j+2]=false;
+                        }
+                    }
+                }else{
+                    auxAsientos = true;
+                    for (int k=0;k<36;k=k+4){
+                        for (int j=0;j<2;j++){
+                            asientos[k+j] = new JButton();                                            //Asiento Premium
+                            asientos[k+j].setBounds(598+(118*(k/8)),410,103,50);
+                            asientos[k+j].setBackground(Color.white);
+                            asientos[k+j].addActionListener(this);
+                            asientos[k+j].setFocusable(false);
+                            asientos[k+j].setIcon(new ImageIcon("src/main/asientoPLibre.png"));
+                            this.add(asientos[k+j]);
+
+                            asientos[k+j+2] = new JButton();                                          //Asiento Cama
+                            asientos[k+j+2].setBounds(598+(96*(k/6)),570+(60*j),81,50);
+                            asientos[k+j+2].setBackground(Color.white);
+                            asientos[k+j+2].addActionListener(this);
+                            asientos[k+j+2].setFocusable(false);
+                            asientos[k+j+2].setIcon(new ImageIcon("src/main/asientoCLibre.png"));
+                            this.add(asientos[k+j+2]);
+
+                            ocupado[k+j]=false;
+                            ocupado[k+j+2]=false;
+                        }
                     }
                 }
-            }else{
-                auxAsientos = true;
-                for (int k=0;k<36;k=k+4){
-                    for (int j=0;j<2;j++){
-                        asientos[k+j] = new JButton();                                            //Asiento Premium
-                        asientos[k+j].setBounds(598+(118*(k/8)),410,103,50);
-                        asientos[k+j].setBackground(Color.white);
-                        asientos[k+j].addActionListener(this);
-                        asientos[k+j].setFocusable(false);
-                        asientos[k+j].setIcon(new ImageIcon("src/main/asientoPLibre.png"));
-                        this.add(asientos[k+j]);
-
-                        asientos[k+j+2] = new JButton();                                          //Asiento Cama
-                        asientos[k+j+2].setBounds(598+(96*(k/6)),570+(60*j),81,50);
-                        asientos[k+j+2].setBackground(Color.white);
-                        asientos[k+j+2].addActionListener(this);
-                        asientos[k+j+2].setFocusable(false);
-                        asientos[k+j+2].setIcon(new ImageIcon("src/main/asientoCLibre.png"));
-                        this.add(asientos[k+j+2]);
-
-                        ocupado[k+j]=false;
-                        ocupado[k+j+2]=false;
-                    }
-                }
+                auxElegirH=false;
             }
         }
         for (int i=0;i<36;i++){
