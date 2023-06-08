@@ -12,16 +12,14 @@ import java.awt.event.ActionListener;
 public class PanelPrincipal extends JPanel implements ActionListener{
     private JComboBox origen,destino;
     private JButton busqueda,ConfirmarPago;
-    private JButton asiento1,asiento2,asiento3,asiento4;
     private JButton[] asientos;
     private JRadioButton[] horarios;
     private ButtonGroup horariosG;
     private JLabel textAsientos,textHorarios;
     private String[] ciudadOrigen,ciudadDestino;
     private String auxrec;
-    private Icon a;
-    private Icon asientoIcon;
     private boolean auxBus=true;
+    private boolean[] ocupado;
     private int hora=12;
     /**
      * Metodo constructor que crea instancias del panel comprador y panel expendedor
@@ -45,10 +43,9 @@ public class PanelPrincipal extends JPanel implements ActionListener{
         destino.setFocusable(false);
         this.add(destino);
 
-        a = new ImageIcon("src/main/lupa.png");
-        busqueda = new JButton(a);
+        busqueda = new JButton();
         busqueda.setBounds(800,50,50,50);
-        busqueda.setIcon(a);
+        busqueda.setIcon(new ImageIcon("src/main/lupa.png"));
         busqueda.addActionListener(this);
         busqueda.setFocusable(false);
         this.add(busqueda);
@@ -69,8 +66,8 @@ public class PanelPrincipal extends JPanel implements ActionListener{
         horarios = new JRadioButton[6];
         horariosG = new ButtonGroup();
 
-        asientoIcon = new ImageIcon("src/main/asientoHLibre.png");
-        asientos = new JButton[40];
+        asientos = new JButton[36];
+        ocupado = new boolean[36];
         for (int i=0;i<36;i=i+4){
             for (int j=0;j<2;j++){
                 asientos[i+j] = new JButton();
@@ -78,7 +75,7 @@ public class PanelPrincipal extends JPanel implements ActionListener{
                 asientos[i+j].setBackground(Color.white);
                 asientos[i+j].addActionListener(this);
                 asientos[i+j].setFocusable(false);
-                asientos[i+j].setIcon(asientoIcon);
+                asientos[i+j].setIcon(new ImageIcon("src/main/asientoHLibre.png"));
                 this.add(asientos[i+j]);
 
                 asientos[i+j+2] = new JButton();
@@ -86,8 +83,11 @@ public class PanelPrincipal extends JPanel implements ActionListener{
                 asientos[i+j+2].setBackground(Color.white);
                 asientos[i+j+2].addActionListener(this);
                 asientos[i+j+2].setFocusable(false);
-                asientos[i+j+2].setIcon(asientoIcon);
+                asientos[i+j+2].setIcon(new ImageIcon("src/main/asientoHLibre.png"));
                 this.add(asientos[i+j+2]);
+
+                ocupado[i+j]=false;
+                ocupado[i+j+2]=false;
             }
         }
     }
@@ -130,12 +130,17 @@ public class PanelPrincipal extends JPanel implements ActionListener{
                 horariosG.add(horarios[i]);
                 this.add(horarios[i]);
             }
-            repaint();
         }
-        if (e.getSource()==asiento1){
-            asientoIcon = new ImageIcon("src/main/asientoHOcupado.png");
-            repaint();
+        for (int i=0;i<36;i++){
+            if (e.getSource()==asientos[i]){
+                if (ocupado[i]==false){
+                    asientos[i].setIcon(new ImageIcon("src/main/asientoHOcupado.png"));
+                    ocupado[i]=true;
+                }else{
+                    asientos[i].setIcon(new ImageIcon("src/main/asientoHLibre.png"));
+                    ocupado[i]=false;
+                }
+            }
         }
-
     }
 }

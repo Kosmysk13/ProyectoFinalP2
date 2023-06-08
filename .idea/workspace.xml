@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db516c12-abac-4e8e-b482-ebdaf0db48a9" name="Changes" comment="Se optimiza creacion de horarios y se agrega funcionalidad al boton de buscar.">
+    <list default="true" id="db516c12-abac-4e8e-b482-ebdaf0db48a9" name="Changes" comment="Se crean asientos mediante ciclo for">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PanelPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/PanelPrincipal.java" afterDir="false" />
     </list>
@@ -107,7 +107,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686183102241</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Se crean asientos mediante ciclo for">
+      <created>1686184457427</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1686184457427</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -116,6 +123,7 @@
     <MESSAGE value="Se ajustan paneles de asientos, horarios y botones menu de los recorridos. Se agrega boton para simular pago" />
     <MESSAGE value="Se crean horarios hipoteticos e iconos de asientos libres y ocupados" />
     <MESSAGE value="Se optimiza creacion de horarios y se agrega funcionalidad al boton de buscar." />
-    <option name="LAST_COMMIT_MESSAGE" value="Se optimiza creacion de horarios y se agrega funcionalidad al boton de buscar." />
+    <MESSAGE value="Se crean asientos mediante ciclo for" />
+    <option name="LAST_COMMIT_MESSAGE" value="Se crean asientos mediante ciclo for" />
   </component>
 </project>
