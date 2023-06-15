@@ -11,15 +11,13 @@ import java.awt.event.ActionListener;
  */
 public class PanelPrincipal extends JPanel implements ActionListener{
     private JComboBox origen,destino,pisoBus;
-    private JButton busqueda,ConfirmarPago,ElegirHorario;
-    private JButton[] asientos;
+    private JButton busqueda,ConfirmarPago,ElegirHorario,asientos[];
     private JRadioButton[] horarios;
     private ButtonGroup horariosG;
     private JLabel textAsientos,textHorarios;
     private JPanel PanelRecorridos,PanelAsientos,PanelHorarios;
     private String[] ciudadOrigen,ciudadDestino,pisosB;
     private String auxrec;
-    private boolean auxBus=true,auxAsientos;
     private boolean[] ocupado;
     private int hora=12,auxHorarios,auxPiso=1,auxElegirH=0;
     /**
@@ -32,21 +30,23 @@ public class PanelPrincipal extends JPanel implements ActionListener{
         this.setVisible(true);
 
         ciudadOrigen = new String[] {String.valueOf(Recorridos.SANTIAGO),String.valueOf(Recorridos.CONCEPCION),String.valueOf(Recorridos.CHILLAN),String.valueOf(Recorridos.LOS_ANGELES)};
-        ciudadDestino = new String[] {String.valueOf(Recorridos.SANTIAGO),String.valueOf(Recorridos.CONCEPCION),String.valueOf(Recorridos.CHILLAN),String.valueOf(Recorridos.LOS_ANGELES)};
+        ciudadDestino = new String[] {String.valueOf(Recorridos.CONCEPCION),String.valueOf(Recorridos.SANTIAGO),String.valueOf(Recorridos.CHILLAN),String.valueOf(Recorridos.LOS_ANGELES)};
         pisosB = new String[] {"PRIMER   PISO","SEGUNDO   PISO"};
+        asientos = new JButton[36];
+        ocupado = new boolean[36];
 
         origen = new JComboBox(ciudadOrigen);
         origen.addActionListener(this);
-        origen.setBounds(100,70,400,50);
+        origen.setBounds(120,70,400,50);
         origen.setFocusable(false);
         this.add(origen);
         destino = new JComboBox(ciudadDestino);
         destino.addActionListener(this);
-        destino.setBounds(550,70,400,50);
+        destino.setBounds(570,70,400,50);
         destino.setFocusable(false);
         this.add(destino);
         busqueda = new JButton("   BUSCAR");
-        busqueda.setBounds(1000,70,120,50);
+        busqueda.setBounds(1020,70,120,50);
         busqueda.setIcon(new ImageIcon("src/main/lupa.png"));
         busqueda.addActionListener(this);
         busqueda.setFocusable(false);
@@ -89,14 +89,11 @@ public class PanelPrincipal extends JPanel implements ActionListener{
         PanelHorarios = new JPanel();
         PanelHorarios.setBounds(50,224, 300, 50);
         PanelHorarios.setBackground(new Color(99, 132, 180));
-        PanelHorarios.setVisible(true);
         this.add(PanelHorarios);
+        PanelHorarios.setVisible(true);
 
         horarios = new JRadioButton[8];
         horariosG = new ButtonGroup();
-
-        asientos = new JButton[36];
-        ocupado = new boolean[36];
     }
 
     /**
@@ -117,6 +114,8 @@ public class PanelPrincipal extends JPanel implements ActionListener{
         g.setColor(Color.black);
         g.drawRect(50,224, 300, 500);                               //Panel Horarios Borde
         g.drawLine(50,274,350,274);
+        g.drawString("Origen",130,60);
+        g.drawString("Destino",580,60);
     }
 
     @Override
@@ -133,11 +132,11 @@ public class PanelPrincipal extends JPanel implements ActionListener{
                 horarios[i] = new JRadioButton("SALIDA: "+(hora+i)+":00 - LLEGADA: "+(hora+i+2)+":00");
                 horarios[i].setBounds(100,285+(55*i),250,50);
                 horarios[i].setBackground(Color.white);
-                horarios[i].setVisible(auxBus);
                 horarios[i].setFocusable(false);
                 horarios[i].addActionListener(this);
                 horariosG.add(horarios[i]);
                 this.add(horarios[i]);
+                horarios[i].setVisible(true);
             }
         }
         for (int i=0;i<8;i++){
@@ -150,7 +149,6 @@ public class PanelPrincipal extends JPanel implements ActionListener{
                             this.remove(asientos[k+j+2]);
                             ocupado[k+j]=true;
                             ocupado[k+j+2]=true;
-                            repaint();
                         }
                     }
                 }
@@ -159,7 +157,6 @@ public class PanelPrincipal extends JPanel implements ActionListener{
         }
         if (e.getSource()==ElegirHorario){
             if (auxElegirH==1){
-                auxAsientos = true;
                 for (int k=0;k<36;k=k+4){
                     for (int j=0;j<2;j++){
                         asientos[k+j] = new JButton();                                            //Asiento Premium
@@ -169,6 +166,7 @@ public class PanelPrincipal extends JPanel implements ActionListener{
                         asientos[k+j].setFocusable(false);
                         asientos[k+j].setIcon(new ImageIcon("src/main/asientoPLibre.png"));
                         this.add(asientos[k+j]);
+                        asientos[k+j].setVisible(true);
 
                         asientos[k+j+2] = new JButton();                                          //Asiento Cama
                         asientos[k+j+2].setBounds(598+(96*(k/6)),570+(60*j),81,50);
@@ -177,6 +175,7 @@ public class PanelPrincipal extends JPanel implements ActionListener{
                         asientos[k+j+2].setFocusable(false);
                         asientos[k+j+2].setIcon(new ImageIcon("src/main/asientoCLibre.png"));
                         this.add(asientos[k+j+2]);
+                        asientos[k+j+2].setVisible(true);
 
                         ocupado[k+j]=false;
                         ocupado[k+j+2]=false;
