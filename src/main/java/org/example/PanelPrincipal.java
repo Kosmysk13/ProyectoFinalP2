@@ -10,6 +10,9 @@ import java.awt.event.ActionListener;
  * paneles para mostrarse en uno solo para la Ventana
  */
 public class PanelPrincipal extends JPanel implements ActionListener{
+    private PanelAsientos pa;
+    private PanelHorarios ph;
+    private PanelRecorridos pr;
     private JComboBox origen,destino,pisoBus;
     private JButton busqueda,ConfirmarPago,ElegirHorario,asientos[];
     private JRadioButton[] horarios;
@@ -28,6 +31,13 @@ public class PanelPrincipal extends JPanel implements ActionListener{
         this.setLayout(null);
         this.setBackground(new Color(188,227,255));
         this.setVisible(true);
+
+        pa = new PanelAsientos();
+        this.add(pa);
+        ph = new PanelHorarios();
+        this.add(ph);
+        pr = new PanelRecorridos();
+        this.add(pr);
 
         ciudadOrigen = new String[] {String.valueOf(Recorridos.SANTIAGO),String.valueOf(Recorridos.CONCEPCION),String.valueOf(Recorridos.CHILLAN),String.valueOf(Recorridos.LOS_ANGELES)};
         ciudadDestino = new String[] {String.valueOf(Recorridos.CONCEPCION),String.valueOf(Recorridos.SANTIAGO),String.valueOf(Recorridos.CHILLAN),String.valueOf(Recorridos.LOS_ANGELES)};
@@ -102,20 +112,9 @@ public class PanelPrincipal extends JPanel implements ActionListener{
      */
     public void paint (Graphics g){
         super.paint(g);
-        g.setColor(Color.black);
-        g.drawRect(50,25, 1150, 150);                               //Panel Recorrido Borde
-        g.setColor(Color.white);
-        g.fillRect(500,349, 700, 375);                               //Panel Asientos
-        g.setColor(Color.black);
-        g.drawRect(500,224, 700, 500);                               //Panel asientos Borde
-        g.drawLine(500,274,1200,274);
-        g.setColor(Color.white);
-        g.fillRect(50,274, 300, 450);                               //Panel Horarios
-        g.setColor(Color.black);
-        g.drawRect(50,224, 300, 500);                               //Panel Horarios Borde
-        g.drawLine(50,274,350,274);
-        g.drawString("Origen",130,60);
-        g.drawString("Destino",580,60);
+        pa.paint(g);
+        ph.paint(g);
+        pr.paint(g);
     }
 
     @Override

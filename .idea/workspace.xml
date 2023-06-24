@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db516c12-abac-4e8e-b482-ebdaf0db48a9" name="Changes" comment="Se crean paneles para los asientos,horarios y la seleccion de recorrido">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/AsientoPremium.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/AsientoSalonCama.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/AsientoSemiCama.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/AsientosBus.java" afterDir="false" />
+    <list default="true" id="db516c12-abac-4e8e-b482-ebdaf0db48a9" name="Changes" comment="Se crean clases Asiento y sus subclases (tipos de asiento), se crea ArrayList de Asientos">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/PanelHorarios.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Asiento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Asiento.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PanelAsientos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/PanelAsientos.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PanelPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/PanelPrincipal.java" afterDir="false" />
     </list>
@@ -155,7 +151,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686197386117</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Se crean clases Asiento y sus subclases (tipos de asiento), se crea ArrayList de Asientos">
+      <created>1686849973372</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1686849973372</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -170,6 +173,7 @@
     <MESSAGE value="Se agregan diferentes tipos de asientos y boton para elegir horario. Cuando se presiona boton se muestran los asientos para ese horario" />
     <MESSAGE value="Se fixea problema con boton ElegirHorario, ya no permite multiples usos" />
     <MESSAGE value="Se crean paneles para los asientos,horarios y la seleccion de recorrido" />
-    <option name="LAST_COMMIT_MESSAGE" value="Se crean paneles para los asientos,horarios y la seleccion de recorrido" />
+    <MESSAGE value="Se crean clases Asiento y sus subclases (tipos de asiento), se crea ArrayList de Asientos" />
+    <option name="LAST_COMMIT_MESSAGE" value="Se crean clases Asiento y sus subclases (tipos de asiento), se crea ArrayList de Asientos" />
   </component>
 </project>
