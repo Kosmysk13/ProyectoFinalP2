@@ -39,8 +39,8 @@ public class PanelPrincipal extends JPanel implements ActionListener{
         pr = new PanelRecorridos();
         this.add(pr);
 
-        ciudadOrigen = new String[] {String.valueOf(Recorridos.SANTIAGO),String.valueOf(Recorridos.CONCEPCION),String.valueOf(Recorridos.CHILLAN),String.valueOf(Recorridos.LOS_ANGELES)};
-        ciudadDestino = new String[] {String.valueOf(Recorridos.CONCEPCION),String.valueOf(Recorridos.SANTIAGO),String.valueOf(Recorridos.CHILLAN),String.valueOf(Recorridos.LOS_ANGELES)};
+        ciudadOrigen = new String[] {String.valueOf(Recorridos.CHILLAN), String.valueOf(Recorridos.CONCEPCION),String.valueOf(Recorridos.LOS_ANGELES)};
+        ciudadDestino = new String[] {String.valueOf(Recorridos.CONCEPCION),String.valueOf(Recorridos.CHILLAN),String.valueOf(Recorridos.LOS_ANGELES)};
         pisosB = new String[] {"PRIMER   PISO","SEGUNDO   PISO"};
         asientos = new JButton[36];
         ocupado = new boolean[36];

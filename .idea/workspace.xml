@@ -4,11 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db516c12-abac-4e8e-b482-ebdaf0db48a9" name="Changes" comment="Se crean clases para cada panel y se modifican sus respectivos metodos paint">
+    <list default="true" id="db516c12-abac-4e8e-b482-ebdaf0db48a9" name="Changes" comment="Se fixea bug que no dejaba ver botones de forma inmediata">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Bus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Recorrido.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PanelAsientos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/PanelAsientos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PanelHorarios.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/PanelHorarios.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Asiento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Asiento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/AsientoPremium.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/AsientoPremium.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/AsientoSalonCama.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/AsientoSalonCama.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/AsientoSemiCama.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/AsientoSemiCama.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PanelPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/PanelPrincipal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Recorridos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Recorridos.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,7 +163,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686849973372</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Se fixea bug que no dejaba ver botones de forma inmediata">
+      <created>1687724126921</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1687724126921</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -174,6 +186,7 @@
     <MESSAGE value="Se fixea problema con boton ElegirHorario, ya no permite multiples usos" />
     <MESSAGE value="Se crean paneles para los asientos,horarios y la seleccion de recorrido" />
     <MESSAGE value="Se crean clases Asiento y sus subclases (tipos de asiento), se crea ArrayList de Asientos" />
-    <option name="LAST_COMMIT_MESSAGE" value="Se crean clases Asiento y sus subclases (tipos de asiento), se crea ArrayList de Asientos" />
+    <MESSAGE value="Se fixea bug que no dejaba ver botones de forma inmediata" />
+    <option name="LAST_COMMIT_MESSAGE" value="Se fixea bug que no dejaba ver botones de forma inmediata" />
   </component>
 </project>
