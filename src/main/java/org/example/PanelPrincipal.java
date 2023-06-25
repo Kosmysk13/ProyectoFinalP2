@@ -127,15 +127,15 @@ public class PanelPrincipal extends JPanel implements ActionListener{
             destino.removeItem(origen.getSelectedItem());
         }
         if (e.getSource()==busqueda){
-            for (int i=0;i<8;i++){
+            for (int i=0;i<6;i++){
                 horarios[i] = new JRadioButton("SALIDA: "+(hora+i)+":00 - LLEGADA: "+(hora+i+2)+":00");
-                horarios[i].setBounds(100,285+(55*i),250,50);
-                horarios[i].setBackground(Color.white);
+                horarios[i].setBounds(100,285+(75*i),250,50);
+                horarios[i].setBackground(new Color(188,227,255));
                 horarios[i].setFocusable(false);
                 horarios[i].addActionListener(this);
                 horariosG.add(horarios[i]);
                 this.add(horarios[i]);
-                horarios[i].setVisible(true);
+                repaint();
             }
         }
         for (int i=0;i<8;i++){
@@ -160,19 +160,19 @@ public class PanelPrincipal extends JPanel implements ActionListener{
                     for (int j=0;j<2;j++){
                         asientos[k+j] = new JButton();                                            //Asiento Premium
                         asientos[k+j].setBounds(598+(118*(k/8)),410,103,50);
+                        asientos[k+j].setIcon(new ImageIcon("src/main/asientoPLibre.png"));
                         asientos[k+j].setBackground(Color.white);
                         asientos[k+j].addActionListener(this);
                         asientos[k+j].setFocusable(false);
-                        asientos[k+j].setIcon(new ImageIcon("src/main/asientoPLibre.png"));
                         this.add(asientos[k+j]);
                         asientos[k+j].setVisible(true);
 
                         asientos[k+j+2] = new JButton();                                          //Asiento Cama
                         asientos[k+j+2].setBounds(598+(96*(k/6)),570+(60*j),81,50);
+                        asientos[k+j+2].setIcon(new ImageIcon("src/main/asientoCLibre.png"));
                         asientos[k+j+2].setBackground(Color.white);
                         asientos[k+j+2].addActionListener(this);
                         asientos[k+j+2].setFocusable(false);
-                        asientos[k+j+2].setIcon(new ImageIcon("src/main/asientoCLibre.png"));
                         this.add(asientos[k+j+2]);
                         asientos[k+j+2].setVisible(true);
 
@@ -182,6 +182,7 @@ public class PanelPrincipal extends JPanel implements ActionListener{
                 }
                 auxElegirH=2;
             }
+            repaint();
         }
         if (e.getSource()==pisoBus){
             if ((pisoBus.getSelectedItem()=="PRIMER   PISO")&&(auxPiso==2)&&(auxElegirH==2)){
@@ -191,7 +192,7 @@ public class PanelPrincipal extends JPanel implements ActionListener{
                         this.remove(asientos[k+j+2]);
                         ocupado[k+j]=true;
                         ocupado[k+j+2]=true;
-                        repaint();
+                        //repaint();
                     }
                 }
                 for (int k=0;k<36;k=k+4){
@@ -225,7 +226,7 @@ public class PanelPrincipal extends JPanel implements ActionListener{
                             this.remove(asientos[k+j+2]);
                             ocupado[k+j]=true;
                             ocupado[k+j+2]=true;
-                            repaint();
+                            //repaint();
                         }
                     }
                 }
@@ -253,6 +254,7 @@ public class PanelPrincipal extends JPanel implements ActionListener{
                 }
                 auxPiso=2;
             }
+            repaint();
         }
         for (int i=0;i<36;i++){
             if (auxPiso==2){

@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db516c12-abac-4e8e-b482-ebdaf0db48a9" name="Changes" comment="Se crean clases Asiento y sus subclases (tipos de asiento), se crea ArrayList de Asientos">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/PanelHorarios.java" afterDir="false" />
+    <list default="true" id="db516c12-abac-4e8e-b482-ebdaf0db48a9" name="Changes" comment="Se crean clases para cada panel y se modifican sus respectivos metodos paint">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PanelAsientos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/PanelAsientos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PanelHorarios.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/PanelHorarios.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PanelPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/PanelPrincipal.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
