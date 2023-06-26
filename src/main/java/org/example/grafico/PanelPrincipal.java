@@ -82,28 +82,11 @@ public class PanelPrincipal extends JPanel implements ActionListener{
         ElegirHorario.addActionListener(this);
         this.add(ElegirHorario);
 
-        textAsientos = new JLabel("Asientos");
-        textAsientos.setBounds(800,224,100,50);
-        this.add(textAsientos);
-        textHorarios = new JLabel("Horarios");
-        textHorarios.setBounds(175,224,100,50);
-        this.add(textHorarios);
-
         PanelRecorridos = new JPanel();
         PanelRecorridos.setBounds(50,25, 1150, 150);
         PanelRecorridos.setBackground(new Color(99, 132, 180));
         PanelRecorridos.setVisible(true);
         this.add(PanelRecorridos);
-        PanelAsientos = new JPanel();
-        PanelAsientos.setBounds(500,224, 700, 50);
-        PanelAsientos.setBackground(new Color(99, 132, 180));
-        PanelAsientos.setVisible(true);
-        this.add(PanelAsientos);
-        PanelHorarios = new JPanel();
-        PanelHorarios.setBounds(50,224, 300, 50);
-        PanelHorarios.setBackground(new Color(99, 132, 180));
-        this.add(PanelHorarios);
-        PanelHorarios.setVisible(true);
 
         horarios = new JRadioButton[8];
         horariosG = new ButtonGroup();

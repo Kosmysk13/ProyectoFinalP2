@@ -3,7 +3,6 @@ import java.util.ArrayList;
 
 
 public class AsientosBus{
-    Asiento a = null;
     ArrayList<Asiento> arrAs = new ArrayList<Asiento>();
     public AsientosBus(){
     }

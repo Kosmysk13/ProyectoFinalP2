@@ -4,14 +4,20 @@ import javax.swing.*;
 import java.awt.*;
 
 public class PanelAsientos extends JPanel{
+    private JPanel panelA;
     public PanelAsientos(){
-        this.setPreferredSize(new Dimension(700,500));
+        panelA = new JPanel();
+        //panel.setPreferredSize(new Dimension(700,500));
+        panelA.setBounds(500,224, 700, 50);
+        panelA.setBackground(new Color(99, 132, 180));
+        panelA.setVisible(true);
     }
     public void paint (Graphics g){
         super.paint(g);
-        //g.setColor(Color.white);
-        //g.fillRect(500,349, 700, 375);                               //Panel Asientos
+        g.setColor(new Color(99, 132, 180));
+        g.fillRect(500,224, 700, 50);
         g.setColor(Color.black);
+        g.drawString("Asientos",800,254);
         g.drawRect(500,224, 700, 500);                               //Panel asientos Borde
         g.drawLine(500,274,1200,274);
     }

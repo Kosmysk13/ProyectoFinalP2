@@ -5,7 +5,6 @@ import java.awt.*;
 
 public class PanelRecorridos extends JPanel {
     public PanelRecorridos(){
-        this.setPreferredSize(new Dimension(400,400));
     }
     public void paint (Graphics g){
         super.paint(g);
