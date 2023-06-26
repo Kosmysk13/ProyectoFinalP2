@@ -71,6 +71,7 @@ public class PanelPrincipal extends JPanel implements ActionListener{
         ConfirmarPago = new JButton("Confirmar Pago");
         ConfirmarPago.setBounds(1000,750,200,50);
         ConfirmarPago.setFocusable(false);
+        ConfirmarPago.addActionListener(this);
         this.add(ConfirmarPago);
 
         ElegirHorario = new JButton("Elegir Horario");
@@ -192,7 +193,6 @@ public class PanelPrincipal extends JPanel implements ActionListener{
                         this.remove(asientos[k+j+2]);
                         ocupado[k+j]=true;
                         ocupado[k+j+2]=true;
-                        //repaint();
                     }
                 }
                 for (int k=0;k<36;k=k+4){
@@ -226,7 +226,6 @@ public class PanelPrincipal extends JPanel implements ActionListener{
                             this.remove(asientos[k+j+2]);
                             ocupado[k+j]=true;
                             ocupado[k+j+2]=true;
-                            //repaint();
                         }
                     }
                 }
@@ -289,6 +288,13 @@ public class PanelPrincipal extends JPanel implements ActionListener{
                 }
             }
 
+        }
+        if (e.getSource()==ConfirmarPago){
+            for (int i=0;i<36;i++){
+                if (ocupado[i]==true){
+                    asientos[i].removeActionListener(this);
+                }
+            }
         }
     }
 }
