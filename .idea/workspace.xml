@@ -4,16 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db516c12-abac-4e8e-b482-ebdaf0db48a9" name="Changes" comment="Se fixea bug que no dejaba ver botones de forma inmediata">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Bus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Recorrido.java" afterDir="false" />
+    <list default="true" id="db516c12-abac-4e8e-b482-ebdaf0db48a9" name="Changes" comment="Se crea interface Asiento para eventualmente usar Factory Method. Se elimina un recorrido del enum">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/AsientoFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/BusesRec.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/TipodeAsientos.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Asiento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Asiento.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/AsientoPremium.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/AsientoPremium.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/AsientoSalonCama.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/AsientoSalonCama.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/AsientoSemiCama.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/AsientoSemiCama.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PanelPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/PanelPrincipal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Recorridos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Recorridos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/AsientosBus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/AsientosBus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Bus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Bus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Recorrido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Recorrido.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,8 +25,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -170,7 +172,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687724126921</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Se crea interface Asiento para eventualmente usar Factory Method. Se elimina un recorrido del enum">
+      <created>1687732950311</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1687732950311</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -187,6 +196,7 @@
     <MESSAGE value="Se crean paneles para los asientos,horarios y la seleccion de recorrido" />
     <MESSAGE value="Se crean clases Asiento y sus subclases (tipos de asiento), se crea ArrayList de Asientos" />
     <MESSAGE value="Se fixea bug que no dejaba ver botones de forma inmediata" />
-    <option name="LAST_COMMIT_MESSAGE" value="Se fixea bug que no dejaba ver botones de forma inmediata" />
+    <MESSAGE value="Se crea interface Asiento para eventualmente usar Factory Method. Se elimina un recorrido del enum" />
+    <option name="LAST_COMMIT_MESSAGE" value="Se crea interface Asiento para eventualmente usar Factory Method. Se elimina un recorrido del enum" />
   </component>
 </project>

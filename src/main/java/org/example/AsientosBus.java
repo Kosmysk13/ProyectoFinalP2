@@ -7,13 +7,13 @@ public class AsientosBus{
     ArrayList<Asiento> arrAs = new ArrayList<Asiento>();
     public AsientosBus(){
     }
-    public void addBebida(Asiento as){
+    public void addAsiento(Asiento as){
         arrAs.add(as);
     }
-    public Asiento getAsiento(){
+    public Asiento getAsiento(int cualAs){
         if (arrAs.size()>0){
-            Asiento as1 = arrAs.get(0);
-            arrAs.remove(0);
+            Asiento as1 = arrAs.get(cualAs);
+            arrAs.remove(cualAs);
             return as1;
         }else{
             return null;

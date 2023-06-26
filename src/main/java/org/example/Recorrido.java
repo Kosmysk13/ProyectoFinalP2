@@ -6,4 +6,7 @@ public class Recorrido {
         origen = ciudad1.toString();
         destino = ciudad2.toString();
     }
+    public String getRecorrido(){
+        return (origen+destino);
+    }
 }
