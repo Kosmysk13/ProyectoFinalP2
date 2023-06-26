@@ -1,4 +1,4 @@
-package org.example;
+package org.example.logica;
 
 public class AsientoFactory {
     public Asiento obtenerAsiento(TipodeAsientos tipodeasiento,int rec){

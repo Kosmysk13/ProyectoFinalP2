@@ -1,4 +1,4 @@
-package org.example;
+package org.example.logica;
 
 public class AsientoSalonCama implements Asiento{
     private int num;

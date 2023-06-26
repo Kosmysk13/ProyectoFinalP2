@@ -1,4 +1,4 @@
-package org.example;
+package org.example.logica;
 
 public enum Recorridos {
     CONCEPCION,CHILLAN,LOS_ANGELES;

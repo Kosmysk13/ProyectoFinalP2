@@ -1,4 +1,6 @@
-package org.example;
+package org.example.grafico;
+
+import org.example.logica.Recorridos;
 
 import javax.swing.*;
 import java.awt.*;
@@ -57,7 +59,7 @@ public class PanelPrincipal extends JPanel implements ActionListener{
         this.add(destino);
         busqueda = new JButton("   BUSCAR");
         busqueda.setBounds(1020,70,120,50);
-        busqueda.setIcon(new ImageIcon("src/main/lupa.png"));
+        busqueda.setIcon(new ImageIcon("src/main/java/org/example/elementosPanel/lupa.png"));
         busqueda.addActionListener(this);
         busqueda.setFocusable(false);
         this.add(busqueda);
@@ -161,7 +163,7 @@ public class PanelPrincipal extends JPanel implements ActionListener{
                     for (int j=0;j<2;j++){
                         asientos[k+j] = new JButton();                                            //Asiento Premium
                         asientos[k+j].setBounds(598+(118*(k/8)),410,103,50);
-                        asientos[k+j].setIcon(new ImageIcon("src/main/asientoPLibre.png"));
+                        asientos[k+j].setIcon(new ImageIcon("src/main/java/org/example/elementosPanel/asientoPLibre.png"));
                         asientos[k+j].setBackground(Color.white);
                         asientos[k+j].addActionListener(this);
                         asientos[k+j].setFocusable(false);
@@ -170,7 +172,7 @@ public class PanelPrincipal extends JPanel implements ActionListener{
 
                         asientos[k+j+2] = new JButton();                                          //Asiento Cama
                         asientos[k+j+2].setBounds(598+(96*(k/6)),570+(60*j),81,50);
-                        asientos[k+j+2].setIcon(new ImageIcon("src/main/asientoCLibre.png"));
+                        asientos[k+j+2].setIcon(new ImageIcon("src/main/java/org/example/elementosPanel/asientoCLibre.png"));
                         asientos[k+j+2].setBackground(Color.white);
                         asientos[k+j+2].addActionListener(this);
                         asientos[k+j+2].setFocusable(false);
@@ -202,7 +204,7 @@ public class PanelPrincipal extends JPanel implements ActionListener{
                         asientos[k+j].setBackground(Color.white);
                         asientos[k+j].addActionListener(this);
                         asientos[k+j].setFocusable(false);
-                        asientos[k+j].setIcon(new ImageIcon("src/main/asientoPLibre.png"));
+                        asientos[k+j].setIcon(new ImageIcon("src/main/java/org/example/elementosPanel/asientoPLibre.png"));
                         this.add(asientos[k+j]);
 
                         asientos[k+j+2] = new JButton();                                          //Asiento Cama
@@ -210,7 +212,7 @@ public class PanelPrincipal extends JPanel implements ActionListener{
                         asientos[k+j+2].setBackground(Color.white);
                         asientos[k+j+2].addActionListener(this);
                         asientos[k+j+2].setFocusable(false);
-                        asientos[k+j+2].setIcon(new ImageIcon("src/main/asientoCLibre.png"));
+                        asientos[k+j+2].setIcon(new ImageIcon("src/main/java/org/example/elementosPanel/asientoCLibre.png"));
                         this.add(asientos[k+j+2]);
 
                         ocupado[k+j]=false;
@@ -236,7 +238,7 @@ public class PanelPrincipal extends JPanel implements ActionListener{
                         asientos[k+j].setBackground(Color.white);
                         asientos[k+j].addActionListener(this);
                         asientos[k+j].setFocusable(false);
-                        asientos[k+j].setIcon(new ImageIcon("src/main/asientoSCLibre.png"));
+                        asientos[k+j].setIcon(new ImageIcon("src/main/java/org/example/elementosPanel/asientoSCLibre.png"));
                         this.add(asientos[k+j]);
 
                         asientos[k+j+2] = new JButton();
@@ -244,7 +246,7 @@ public class PanelPrincipal extends JPanel implements ActionListener{
                         asientos[k+j+2].setBackground(Color.white);
                         asientos[k+j+2].addActionListener(this);
                         asientos[k+j+2].setFocusable(false);
-                        asientos[k+j+2].setIcon(new ImageIcon("src/main/asientoSCLibre.png"));
+                        asientos[k+j+2].setIcon(new ImageIcon("src/main/java/org/example/elementosPanel/asientoSCLibre.png"));
                         this.add(asientos[k+j+2]);
 
                         ocupado[k+j]=false;
@@ -259,10 +261,10 @@ public class PanelPrincipal extends JPanel implements ActionListener{
             if (auxPiso==2){
                 if (e.getSource()==asientos[i]){
                     if (ocupado[i]==false){
-                        asientos[i].setIcon(new ImageIcon("src/main/asientoSCOcupado.png"));
+                        asientos[i].setIcon(new ImageIcon("src/main/java/org/example/elementosPanel/asientoSCOcupado.png"));
                         ocupado[i]=true;
                     }else{
-                        asientos[i].setIcon(new ImageIcon("src/main/asientoSCLibre.png"));
+                        asientos[i].setIcon(new ImageIcon("src/main/java/org/example/elementosPanel/asientoSCLibre.png"));
                         ocupado[i]=false;
                     }
                 }
@@ -270,18 +272,18 @@ public class PanelPrincipal extends JPanel implements ActionListener{
                 if (e.getSource()==asientos[i]){
                     if (i%8==0){
                         if (ocupado[i]==false){
-                            asientos[i].setIcon(new ImageIcon("src/main/asientoPOcupado.png"));
+                            asientos[i].setIcon(new ImageIcon("src/main/java/org/example/elementosPanel/asientoPOcupado.png"));
                             ocupado[i]=true;
                         }else{
-                            asientos[i].setIcon(new ImageIcon("src/main/asientoPLibre.png"));
+                            asientos[i].setIcon(new ImageIcon("src/main/java/org/example/elementosPanel/asientoPLibre.png"));
                             ocupado[i]=false;
                         }
                     }else{
                         if (ocupado[i]==false){
-                            asientos[i].setIcon(new ImageIcon("src/main/asientoCOcupado.png"));
+                            asientos[i].setIcon(new ImageIcon("src/main/java/org/example/elementosPanel/asientoCOcupado.png"));
                             ocupado[i]=true;
                         }else{
-                            asientos[i].setIcon(new ImageIcon("src/main/asientoCLibre.png"));
+                            asientos[i].setIcon(new ImageIcon("src/main/java/org/example/elementosPanel/asientoCLibre.png"));
                             ocupado[i]=false;
                         }
                     }

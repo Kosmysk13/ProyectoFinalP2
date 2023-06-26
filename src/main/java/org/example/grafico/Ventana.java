@@ -1,9 +1,7 @@
-package org.example;
+package org.example.grafico;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 /**
  * Crea la ventana que va a ver el Cliente, contiene el panel principal

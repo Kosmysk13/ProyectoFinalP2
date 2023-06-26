@@ -4,9 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db516c12-abac-4e8e-b482-ebdaf0db48a9" name="Changes" comment="Se modifican clases Asiento para entregar mayor informacion de ellos. Se crea Factory de Asientos usada en clase Bus. Se crea Enum TipodeAsientos">
+    <list default="true" id="db516c12-abac-4e8e-b482-ebdaf0db48a9" name="Changes" comment="Se agrega funcionalidad al boton ConfirmarPago para dejar intargeteables los asientos elegidos">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PanelPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/PanelPrincipal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/asientoCLibre.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/elementosPanel/asientoCLibre.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/asientoCOcupado.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/elementosPanel/asientoCOcupado.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/asientoPLibre.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/elementosPanel/asientoPLibre.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/asientoPOcupado.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/elementosPanel/asientoPOcupado.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/asientoSCLibre.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/elementosPanel/asientoSCLibre.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/asientoSCOcupado.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/elementosPanel/asientoSCOcupado.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Asiento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/logica/Asiento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/AsientoFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/logica/AsientoFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/AsientoPremium.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/logica/AsientoPremium.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/AsientoSalonCama.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/logica/AsientoSalonCama.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/AsientoSemiCama.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/logica/AsientoSemiCama.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/AsientosBus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/logica/AsientosBus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Bus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/logica/Bus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/BusesRec.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/logica/BusesRec.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PanelAsientos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/grafico/PanelAsientos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PanelHorarios.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/grafico/PanelHorarios.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PanelPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/grafico/PanelPrincipal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PanelRecorridos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/grafico/PanelRecorridos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Recorrido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/logica/Recorrido.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Recorridos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/logica/Recorridos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/TipodeAsientos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/logica/TipodeAsientos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Ventana.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/grafico/Ventana.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/lupa.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/elementosPanel/lupa.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +81,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Diego\Documents\GitHub\ProyectoFinalProgra2\src\main\java\org\example\elementosPanel" />
       <recent name="C:\Users\Diego\Documents\GitHub\ProyectoFinalProgra2\src\main" />
       <recent name="C:\Users\Diego\Documents\GitHub\ProyectoFinalProgra2\src\main\java" />
       <recent name="C:\Users\Diego\Documents\GitHub\ProyectoFinalProgra2\src\main\java\org\example" />
@@ -177,7 +201,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687738208719</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Se agrega funcionalidad al boton ConfirmarPago para dejar intargeteables los asientos elegidos">
+      <created>1687740665158</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1687740665158</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -196,6 +227,7 @@
     <MESSAGE value="Se fixea bug que no dejaba ver botones de forma inmediata" />
     <MESSAGE value="Se crea interface Asiento para eventualmente usar Factory Method. Se elimina un recorrido del enum" />
     <MESSAGE value="Se modifican clases Asiento para entregar mayor informacion de ellos. Se crea Factory de Asientos usada en clase Bus. Se crea Enum TipodeAsientos" />
-    <option name="LAST_COMMIT_MESSAGE" value="Se modifican clases Asiento para entregar mayor informacion de ellos. Se crea Factory de Asientos usada en clase Bus. Se crea Enum TipodeAsientos" />
+    <MESSAGE value="Se agrega funcionalidad al boton ConfirmarPago para dejar intargeteables los asientos elegidos" />
+    <option name="LAST_COMMIT_MESSAGE" value="Se agrega funcionalidad al boton ConfirmarPago para dejar intargeteables los asientos elegidos" />
   </component>
 </project>

@@ -1,8 +1,8 @@
-package org.example;
-public class AsientoPremium implements Asiento{
+package org.example.logica;
+public class AsientoSemiCama implements Asiento{
     private int num;
     private boolean disponible;
-    public AsientoPremium(int a){
+    public AsientoSemiCama(int a){
         num = a;
     }
     public String getPosicion(){
@@ -16,7 +16,7 @@ public class AsientoPremium implements Asiento{
         return num;
     }
     public String getTipoAsiento(){
-        return "Premium";
+        return "SemiCama";
     }
     public boolean getDisponibilidad(){
         return disponible;
