@@ -15,6 +15,9 @@ public class AsientoSemiCama implements Asiento{
     public int getNumAsiento(){
         return num;
     }
+    public int getPrecio(){
+        return (5000);
+    }
     public String getTipoAsiento(){
         return "SemiCama";
     }

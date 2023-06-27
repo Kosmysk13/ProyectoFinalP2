@@ -5,4 +5,5 @@ public interface Asiento{
     public int getNumAsiento();
     public String getTipoAsiento();
     public boolean getDisponibilidad();
+    public int getPrecio();
 }

@@ -15,6 +15,9 @@ public class AsientoPremium implements Asiento{
     public int getNumAsiento(){
         return num;
     }
+    public int getPrecio(){
+        return (7000);
+    }
     public String getTipoAsiento(){
         return "Premium";
     }

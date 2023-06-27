@@ -16,6 +16,9 @@ public class AsientoSalonCama implements Asiento{
     public int getNumAsiento(){
         return num;
     }
+    public int getPrecio(){
+        return (6000);
+    }
     public String getTipoAsiento(){
         return "SalonCama";
     }
