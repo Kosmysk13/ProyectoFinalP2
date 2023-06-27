@@ -23,7 +23,7 @@ public class PanelPrincipal extends JPanel implements ActionListener{
     private String[] ciudadOrigen,ciudadDestino,pisosB;
     private String auxrec;
     private boolean[][][] ocupado;
-    private int hora=12,auxHorarios,auxPiso=1,auxElegirH=0;
+    private int hora=12,auxCualHorario,auxPiso=1,auxElegirH=0;
     /**
      * Metodo constructor que crea instancias del panel comprador y panel expendedor
      * Ademas define los limites del panel
@@ -205,7 +205,7 @@ public class PanelPrincipal extends JPanel implements ActionListener{
         for (int i=0;i<6;i++){
             for (int j=0;j<6;j++){
                 if (e.getSource()==horarios[i][j]){
-                    auxHorarios=i;
+                    auxCualHorario=j;
                     if (asientos[0]!=null){
                         for (int k=0;k<36;k=k+4){
                             for (int l=0;l<2;l++){
@@ -225,12 +225,12 @@ public class PanelPrincipal extends JPanel implements ActionListener{
                 //for (int k=0;k<6;k++){
                     //for (int j=0;j<6;j++){
                         for (int k=0;k<17;k++){
-                            asientos[0][0][k].setVisible(true);
+                            asientos[0][auxCualHorario][k].setVisible(true);
 
-                            asientos[0][0][k].setVisible(true);                        //k+j+2
+                            asientos[0][auxCualHorario][k].setVisible(true);                        //k+j+2
 
-                            ocupado[0][0][k]=false;
-                            ocupado[0][0][k]=false;
+                            ocupado[0][auxCualHorario][k]=false;
+                            ocupado[0][auxCualHorario][k]=false;
                         }
                     //}
                 //}
@@ -251,12 +251,9 @@ public class PanelPrincipal extends JPanel implements ActionListener{
                     }
                 }
                 for (int k=0;k<6;k++){
-                    for (int j=0;j<6;j++){
-                        for (int i=0;i<17;i++){
-                            asientos[i][j][k].setVisible(true);
-
-                            ocupado[0][0][k]=false;
-                        }
+                    for (int i=0;i<17;i++){
+                        asientos[i][auxCualHorario][k].setVisible(true);
+                        ocupado[0][0][k]=false;
                     }
                 }
                 auxPiso=1;
@@ -276,12 +273,9 @@ public class PanelPrincipal extends JPanel implements ActionListener{
                     }
                 }
                 for (int i=0;i<6;i++){
-                    for (int j=0;j<6;j++){
-                        for (int k=17;k<53;k++){
-                            asientos[i][j][k].setVisible(true);
-
-                            ocupado[0][0][k]=false;
-                        }
+                    for (int k=17;k<53;k++){
+                        asientos[i][auxCualHorario][k].setVisible(true);
+                        ocupado[0][0][k]=false;
                     }
                 }
                 auxPiso=2;
@@ -289,36 +283,34 @@ public class PanelPrincipal extends JPanel implements ActionListener{
             repaint();
         }
         for (int i=0;i<6;i++){
-            for (int j=0;j<2;j++){
-                for (int k=0;k<53;k++){
-                    if (auxPiso==2){
-                        if (e.getSource()==asientos[i]){
-                            if (ocupado[0][0][k]==false){
-                                asientos[i][j][k].setIcon(new ImageIcon("src/main/java/org/example/elementosPanel/asientoSCOcupado.png"));
-                                ocupado[0][0][k]=true;
-                            }else{
-                                asientos[i][j][k].setIcon(new ImageIcon("src/main/java/org/example/elementosPanel/asientoSCLibre.png"));
-                                ocupado[0][0][k]=false;
-                            }
+            for (int k=0;k<53;k++){
+                if (auxPiso==2){
+                    if (e.getSource()==asientos[i]){
+                        if (ocupado[0][0][k]==false){
+                            asientos[i][auxCualHorario][k].setIcon(new ImageIcon("src/main/java/org/example/elementosPanel/asientoSCOcupado.png"));
+                            ocupado[0][auxCualHorario][k]=true;
+                        }else{
+                            asientos[i][auxCualHorario][k].setIcon(new ImageIcon("src/main/java/org/example/elementosPanel/asientoSCLibre.png"));
+                            ocupado[0][auxCualHorario][k]=false;
                         }
-                    }else{
-                        if (e.getSource()==asientos[i]){
-                            if (i%8==0){
-                                if (ocupado[0][0][k]==false){
-                                    asientos[i][j][k].setIcon(new ImageIcon("src/main/java/org/example/elementosPanel/asientoPOcupado.png"));
-                                    ocupado[0][0][k]=true;
-                                }else{
-                                    asientos[i][j][k].setIcon(new ImageIcon("src/main/java/org/example/elementosPanel/asientoPLibre.png"));
-                                    ocupado[0][0][k]=false;
-                                }
+                    }
+                }else{
+                    if (e.getSource()==asientos[i]){
+                        if (i%8==0){
+                            if (ocupado[0][0][k]==false){
+                                asientos[i][auxCualHorario][k].setIcon(new ImageIcon("src/main/java/org/example/elementosPanel/asientoPOcupado.png"));
+                                ocupado[0][auxCualHorario][k]=true;
                             }else{
-                                if (ocupado[0][0][k]==false){
-                                    asientos[i][j][k].setIcon(new ImageIcon("src/main/java/org/example/elementosPanel/asientoCOcupado.png"));
-                                    ocupado[0][0][k]=true;
-                                }else{
-                                    asientos[i][j][k].setIcon(new ImageIcon("src/main/java/org/example/elementosPanel/asientoCLibre.png"));
-                                    ocupado[0][0][k]=false;
-                                }
+                                asientos[i][auxCualHorario][k].setIcon(new ImageIcon("src/main/java/org/example/elementosPanel/asientoPLibre.png"));
+                                ocupado[0][auxCualHorario][k]=false;
+                            }
+                        }else{
+                            if (ocupado[0][0][k]==false){
+                                asientos[i][auxCualHorario][k].setIcon(new ImageIcon("src/main/java/org/example/elementosPanel/asientoCOcupado.png"));
+                                ocupado[0][auxCualHorario][k]=true;
+                            }else{
+                                asientos[i][auxCualHorario][k].setIcon(new ImageIcon("src/main/java/org/example/elementosPanel/asientoCLibre.png"));
+                                ocupado[0][auxCualHorario][k]=false;
                             }
                         }
                     }
@@ -329,8 +321,8 @@ public class PanelPrincipal extends JPanel implements ActionListener{
             for (int i=0;i<6;i++){
                 for (int j=0;j<6;j++){
                     for (int k=0;k<53;k++){
-                        if (ocupado[i][j][k]==true){
-                            asientos[i][j][k].removeActionListener(this);
+                        if (ocupado[i][auxCualHorario][k]==true){
+                            asientos[i][auxCualHorario][k].removeActionListener(this);
                         }
                     }
                 }
