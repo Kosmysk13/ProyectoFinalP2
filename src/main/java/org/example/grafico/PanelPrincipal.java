@@ -242,7 +242,6 @@ public class PanelPrincipal extends JPanel implements ActionListener{
                 for (int k=0;k<17;k++){
                     asientos[auxCualRec][auxCualHorario][k].setVisible(true);
                     asientos[auxCualRec][auxCualHorario][k].setVisible(true);
-                    ocupado[auxCualRec][auxCualHorario][k]=false;
                 }
             auxElegirH=2;
             }
