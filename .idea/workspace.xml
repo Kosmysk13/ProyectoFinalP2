@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db516c12-abac-4e8e-b482-ebdaf0db48a9" name="Changes" comment="Se cambia la forma de guardar los botones respectivos a los asientos">
+    <list default="true" id="db516c12-abac-4e8e-b482-ebdaf0db48a9" name="Changes" comment="Se agrega variable para diferenciar buses entre horario y horario">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/grafico/PanelPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/grafico/PanelPrincipal.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -205,7 +206,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687897039281</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Se agrega variable para diferenciar buses entre horario y horario">
+      <created>1687898337898</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1687898337898</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -228,6 +236,7 @@
     <MESSAGE value="Se crean Packages para separar parte logica, grafica y elementos de los paneles" />
     <MESSAGE value="Se cambia la creacion visual de paneles al paint de las clases Paneles respectivas" />
     <MESSAGE value="Se cambia la forma de guardar los botones respectivos a los asientos" />
-    <option name="LAST_COMMIT_MESSAGE" value="Se cambia la forma de guardar los botones respectivos a los asientos" />
+    <MESSAGE value="Se agrega variable para diferenciar buses entre horario y horario" />
+    <option name="LAST_COMMIT_MESSAGE" value="Se agrega variable para diferenciar buses entre horario y horario" />
   </component>
 </project>

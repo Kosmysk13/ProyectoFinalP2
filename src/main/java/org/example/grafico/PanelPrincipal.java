@@ -21,9 +21,9 @@ public class PanelPrincipal extends JPanel implements ActionListener{
     private ButtonGroup horariosG;
     private JPanel PanelRecorridos;
     private String[] ciudadOrigen,ciudadDestino,pisosB;
-    private String auxrec;
+    private String auxRecOrigen,auxRecDestino;
     private boolean[][][] ocupado;
-    private int hora=12,auxCualHorario,auxPiso=1,auxElegirH=0;
+    private int hora=12,auxCualHorario,auxCualRec,auxPiso=1,auxElegirH=0;
     /**
      * Metodo constructor que crea instancias del panel comprador y panel expendedor
      * Ademas define los limites del panel
@@ -190,129 +190,110 @@ public class PanelPrincipal extends JPanel implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource()==origen){
-            if (auxrec!=null){
-                destino.addItem(auxrec);
+            if (auxRecOrigen!=null){
+                destino.addItem(auxRecOrigen);
+                for (int k=0;k<53;k++){
+                    asientos[auxCualRec][auxCualHorario][k].setVisible(false);
+                    repaint();
+                }
             }
-            auxrec = origen.getSelectedItem().toString();
+            auxRecOrigen = origen.getSelectedItem().toString();
             destino.removeItem(origen.getSelectedItem());
         }
+        if (e.getSource()==destino){
+            for (int k=0;k<53;k++){
+                asientos[auxCualRec][auxCualHorario][k].setVisible(false);
+                repaint();
+            }
+            auxRecDestino = destino.getSelectedItem().toString();
+        }
         if (e.getSource()==busqueda){
-            for (int i=0;i<6;i++){
-                horarios[0][i].setVisible(true);
+            if (auxRecOrigen=="CHILLAN"&&auxRecDestino=="CONCEPCION"){
+                auxCualRec = 0;
+            }else if (auxRecOrigen=="CHILLAN"&&auxRecDestino=="LOS_ANGELES"){
+                auxCualRec = 1;
+            }else if (auxRecOrigen=="CONCEPCION"&&auxRecDestino=="LOS_ANGELES"){
+                auxCualRec = 2;
+            }else if (auxRecOrigen=="CONCEPCION"&&auxRecDestino=="CHILLAN"){
+                auxCualRec = 3;
+            }else if (auxRecOrigen=="LOS_ANGELES"&&auxRecDestino=="CONCEPCION"){
+                auxCualRec = 4;
+            }else if (auxRecOrigen=="LOS_ANGELES"&&auxRecDestino=="CHILLAN"){
+                auxCualRec = 5;
+            }
+            for (int j=0;j<6;j++){
+                horarios[auxCualRec][j].setVisible(true);
                 repaint();
             }
         }
         for (int i=0;i<6;i++){
             for (int j=0;j<6;j++){
                 if (e.getSource()==horarios[i][j]){
-                    auxCualHorario=j;
-                    if (asientos[0]!=null){
-                        for (int k=0;k<36;k=k+4){
-                            for (int l=0;l<2;l++){
-                                //this.remove(asientos[i][j][k]);
-                                //this.remove(asientos[i][j][k]);
-                                ocupado[0][0][k] =true;
-                                ocupado[0][0][k]=true;
-                            }
-                        }
+                    for (int k=0;k<53;k++){
+                        asientos[auxCualRec][auxCualHorario][k].setVisible(false);
                     }
+                    auxCualHorario=j;
                     auxElegirH=1;
                 }
             }
         }
         if (e.getSource()==ElegirHorario){
             if (auxElegirH==1){
-                //for (int k=0;k<6;k++){
-                    //for (int j=0;j<6;j++){
-                        for (int k=0;k<17;k++){
-                            asientos[0][auxCualHorario][k].setVisible(true);
-
-                            asientos[0][auxCualHorario][k].setVisible(true);                        //k+j+2
-
-                            ocupado[0][auxCualHorario][k]=false;
-                            ocupado[0][auxCualHorario][k]=false;
-                        }
-                    //}
-                //}
-                auxElegirH=2;
+                for (int k=0;k<17;k++){
+                    asientos[auxCualRec][auxCualHorario][k].setVisible(true);
+                    asientos[auxCualRec][auxCualHorario][k].setVisible(true);                        //k+j+2
+                    ocupado[auxCualRec][auxCualHorario][k]=false;
+                    ocupado[auxCualRec][auxCualHorario][k]=false;
+                }
+            auxElegirH=2;
             }
             repaint();
         }
         if (e.getSource()==pisoBus){
             if ((pisoBus.getSelectedItem()=="PRIMER   PISO")&&(auxPiso==2)&&(auxElegirH==2)){
-                for (int i=0;i<6;i++){
-                    for (int j=0;j<2;j++){
-                        for (int k=0;k<53;k++){
-                            //asientos[i][j][k].setVisible(false);
-                            //this.remove(asientos[k][j][i]);           //k+j+2
-                            ocupado[0][0][k]=true;
-                            ocupado[0][0][k]=true;
-                        }
-                    }
+                for (int k=17;k<53;k++){
+                    asientos[auxCualRec][auxCualHorario][k].setVisible(false);
                 }
-                for (int k=0;k<6;k++){
-                    for (int i=0;i<17;i++){
-                        asientos[i][auxCualHorario][k].setVisible(true);
-                        ocupado[0][0][k]=false;
-                    }
+                for (int k=0;k<17;k++){
+                    asientos[auxCualRec][auxCualHorario][k].setVisible(true);
                 }
                 auxPiso=1;
             }else if ((pisoBus.getSelectedItem()=="SEGUNDO   PISO")&&(auxPiso==1)&&(auxElegirH==2)){
-                if (asientos[0]!=null){
-                    for (int i=0;i<6;i++){
-                        for (int j=0;j<6;j++){
-                            for (int k=17;k<53;k++){
-                                //this.remove(asientos[k][j][i]);
-                                //asientos[k][j][i].setVisible(false);
-                                //this.remove(asientos[k][j][i]);                               //k+j+2
-
-                                ocupado[0][0][k]=true;
-                                ocupado[0][0][k]=true;
-                            }
-                        }
-                    }
+                for (int k=0;k<17;k++){
+                    asientos[auxCualRec][auxCualHorario][k].setVisible(false);
                 }
-                for (int i=0;i<6;i++){
-                    for (int k=17;k<53;k++){
-                        asientos[i][auxCualHorario][k].setVisible(true);
-                        ocupado[0][0][k]=false;
-                    }
+                for (int k=17;k<53;k++){
+                    asientos[auxCualRec][auxCualHorario][k].setVisible(true);
                 }
                 auxPiso=2;
             }
             repaint();
         }
-        for (int i=0;i<6;i++){
-            for (int k=0;k<53;k++){
-                if (auxPiso==2){
-                    if (e.getSource()==asientos[i]){
-                        if (ocupado[0][0][k]==false){
-                            asientos[i][auxCualHorario][k].setIcon(new ImageIcon("src/main/java/org/example/elementosPanel/asientoSCOcupado.png"));
-                            ocupado[0][auxCualHorario][k]=true;
-                        }else{
-                            asientos[i][auxCualHorario][k].setIcon(new ImageIcon("src/main/java/org/example/elementosPanel/asientoSCLibre.png"));
-                            ocupado[0][auxCualHorario][k]=false;
-                        }
+        for (int k=0;k<53;k++){
+            if (e.getSource()==asientos[auxCualRec][auxCualHorario][k]){
+                if (k<5){
+                    if (ocupado[auxCualRec][auxCualHorario][k]==false){
+                        asientos[auxCualRec][auxCualHorario][k].setIcon(new ImageIcon("src/main/java/org/example/elementosPanel/asientoPOcupado.png"));
+                        ocupado[auxCualRec][auxCualHorario][k]=true;
+                    }else{
+                        asientos[auxCualRec][auxCualHorario][k].setIcon(new ImageIcon("src/main/java/org/example/elementosPanel/asientoPLibre.png"));
+                        ocupado[auxCualRec][auxCualHorario][k]=false;
+                    }
+                }else if (k<17){
+                    if (ocupado[auxCualRec][auxCualHorario][k]==false){
+                        asientos[auxCualRec][auxCualHorario][k].setIcon(new ImageIcon("src/main/java/org/example/elementosPanel/asientoCOcupado.png"));
+                        ocupado[auxCualRec][auxCualHorario][k]=true;
+                    }else{
+                        asientos[auxCualRec][auxCualHorario][k].setIcon(new ImageIcon("src/main/java/org/example/elementosPanel/asientoCLibre.png"));
+                        ocupado[auxCualRec][auxCualHorario][k]=false;
                     }
                 }else{
-                    if (e.getSource()==asientos[i]){
-                        if (i%8==0){
-                            if (ocupado[0][0][k]==false){
-                                asientos[i][auxCualHorario][k].setIcon(new ImageIcon("src/main/java/org/example/elementosPanel/asientoPOcupado.png"));
-                                ocupado[0][auxCualHorario][k]=true;
-                            }else{
-                                asientos[i][auxCualHorario][k].setIcon(new ImageIcon("src/main/java/org/example/elementosPanel/asientoPLibre.png"));
-                                ocupado[0][auxCualHorario][k]=false;
-                            }
-                        }else{
-                            if (ocupado[0][0][k]==false){
-                                asientos[i][auxCualHorario][k].setIcon(new ImageIcon("src/main/java/org/example/elementosPanel/asientoCOcupado.png"));
-                                ocupado[0][auxCualHorario][k]=true;
-                            }else{
-                                asientos[i][auxCualHorario][k].setIcon(new ImageIcon("src/main/java/org/example/elementosPanel/asientoCLibre.png"));
-                                ocupado[0][auxCualHorario][k]=false;
-                            }
-                        }
+                    if (ocupado[auxCualRec][auxCualHorario][k]==false){
+                        asientos[auxCualRec][auxCualHorario][k].setIcon(new ImageIcon("src/main/java/org/example/elementosPanel/asientoSCOcupado.png"));
+                        ocupado[auxCualRec][auxCualHorario][k]=true;
+                    }else{
+                        asientos[auxCualRec][auxCualHorario][k].setIcon(new ImageIcon("src/main/java/org/example/elementosPanel/asientoSCLibre.png"));
+                        ocupado[auxCualRec][auxCualHorario][k]=false;
                     }
                 }
             }
@@ -321,8 +302,8 @@ public class PanelPrincipal extends JPanel implements ActionListener{
             for (int i=0;i<6;i++){
                 for (int j=0;j<6;j++){
                     for (int k=0;k<53;k++){
-                        if (ocupado[i][auxCualHorario][k]==true){
-                            asientos[i][auxCualHorario][k].removeActionListener(this);
+                        if (ocupado[auxCualRec][auxCualHorario][k]==true){
+                            asientos[auxCualRec][auxCualHorario][k].removeActionListener(this);
                         }
                     }
                 }
