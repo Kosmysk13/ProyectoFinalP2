@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db516c12-abac-4e8e-b482-ebdaf0db48a9" name="Changes" comment="Se crean Packages para separar parte logica, grafica y elementos de los paneles">
+    <list default="true" id="db516c12-abac-4e8e-b482-ebdaf0db48a9" name="Changes" comment="Se cambia la creacion visual de paneles al paint de las clases Paneles respectivas">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/grafico/PanelAsientos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/grafico/PanelAsientos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/grafico/PanelHorarios.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/grafico/PanelHorarios.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/grafico/PanelPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/grafico/PanelPrincipal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/grafico/PanelRecorridos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/grafico/PanelRecorridos.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -195,7 +192,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687741235398</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Se cambia la creacion visual de paneles al paint de las clases Paneles respectivas">
+      <created>1687742641428</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1687742641428</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -216,6 +220,7 @@
     <MESSAGE value="Se modifican clases Asiento para entregar mayor informacion de ellos. Se crea Factory de Asientos usada en clase Bus. Se crea Enum TipodeAsientos" />
     <MESSAGE value="Se agrega funcionalidad al boton ConfirmarPago para dejar intargeteables los asientos elegidos" />
     <MESSAGE value="Se crean Packages para separar parte logica, grafica y elementos de los paneles" />
-    <option name="LAST_COMMIT_MESSAGE" value="Se crean Packages para separar parte logica, grafica y elementos de los paneles" />
+    <MESSAGE value="Se cambia la creacion visual de paneles al paint de las clases Paneles respectivas" />
+    <option name="LAST_COMMIT_MESSAGE" value="Se cambia la creacion visual de paneles al paint de las clases Paneles respectivas" />
   </component>
 </project>
