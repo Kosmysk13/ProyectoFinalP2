@@ -30,7 +30,4 @@ public class Bus {
     public Asiento asSelec(int cualAs){
         return ab.getAsiento(cualAs);
     }
-    public String getRecorrido(){
-        return rec;
-    }
 }

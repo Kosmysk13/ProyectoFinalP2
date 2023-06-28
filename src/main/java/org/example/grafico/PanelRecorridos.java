@@ -9,7 +9,7 @@ public class PanelRecorridos extends JPanel {
     public void paint (Graphics g){
         super.paint(g);
         g.setColor(Color.black);
-        g.drawRect(50,25, 1150, 150);                               //Panel Recorrido Borde
+        g.drawRect(50,25, 1150, 150);
         g.drawString("Origen",130,60);
         g.drawString("Destino",580,60);
     }

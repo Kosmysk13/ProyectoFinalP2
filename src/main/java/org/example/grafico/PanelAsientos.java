@@ -7,7 +7,6 @@ public class PanelAsientos extends JPanel{
     private JPanel panelA;
     public PanelAsientos(){
         panelA = new JPanel();
-        //panel.setPreferredSize(new Dimension(700,500));
         panelA.setBounds(500,224, 700, 50);
         panelA.setBackground(new Color(99, 132, 180));
         panelA.setVisible(true);
@@ -18,7 +17,7 @@ public class PanelAsientos extends JPanel{
         g.fillRect(500,224, 700, 50);
         g.setColor(Color.black);
         g.drawString("Asientos",800,254);
-        g.drawRect(500,224, 700, 500);                               //Panel asientos Borde
+        g.drawRect(500,224, 700, 500);
         g.drawLine(500,274,1200,274);
     }
 }
