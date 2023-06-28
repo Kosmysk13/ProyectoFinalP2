@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db516c12-abac-4e8e-b482-ebdaf0db48a9" name="Changes" comment="Se crean Unit Tests">
+    <list default="true" id="db516c12-abac-4e8e-b482-ebdaf0db48a9" name="Changes" comment="Se crea clase Comprador y Recorrido para facilitar la reserva de asientos en la parte logica">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/grafico/PanelPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/grafico/PanelPrincipal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/logica/Comprador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/logica/Reservador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/logica/AsientoFactoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/logica/AsientoFactoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/logica/BusTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/logica/BusTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,8 +20,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="JUnit5 Test Class" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -88,7 +91,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AsientoFactoryTest.NumerodeAsientoInvalido" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AsientosBusTest.addAsiento" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ProyectoFinalProgra2" />
       <extension name="coverage">
         <pattern>
@@ -97,14 +100,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.example.logica" />
-      <option name="MAIN_CLASS_NAME" value="org.example.logica.AsientoFactoryTest" />
-      <option name="METHOD_NAME" value="NumerodeAsientoInvalido" />
+      <option name="MAIN_CLASS_NAME" value="org.example.logica.AsientosBusTest" />
+      <option name="METHOD_NAME" value="addAsiento" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AsientoFactoryTest.obtenerAsiento" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AsientosBusTest.addTresAsientos" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ProyectoFinalProgra2" />
       <extension name="coverage">
         <pattern>
@@ -113,14 +116,30 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.example.logica" />
-      <option name="MAIN_CLASS_NAME" value="org.example.logica.AsientoFactoryTest" />
-      <option name="METHOD_NAME" value="obtenerAsiento" />
+      <option name="MAIN_CLASS_NAME" value="org.example.logica.AsientosBusTest" />
+      <option name="METHOD_NAME" value="addTresAsientos" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BusTest.asSelecSinNumero" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AsientosBusTest.getAsiento" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ProyectoFinalProgra2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.logica.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.logica" />
+      <option name="MAIN_CLASS_NAME" value="org.example.logica.AsientosBusTest" />
+      <option name="METHOD_NAME" value="getAsiento" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BusTest.testCrearunBus" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ProyectoFinalProgra2" />
       <extension name="coverage">
         <pattern>
@@ -130,23 +149,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.example.logica" />
       <option name="MAIN_CLASS_NAME" value="org.example.logica.BusTest" />
-      <option name="METHOD_NAME" value="asSelecSinNumero" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BusTest.testCrearBusSinRecorrido" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ProyectoFinalProgra2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.logica.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.example.logica" />
-      <option name="MAIN_CLASS_NAME" value="org.example.logica.BusTest" />
-      <option name="METHOD_NAME" value="testCrearBusSinRecorrido" />
+      <option name="METHOD_NAME" value="testCrearunBus" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -155,10 +158,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.BusTest.testCrearBusSinRecorrido" />
-        <item itemvalue="JUnit.AsientoFactoryTest.obtenerAsiento" />
-        <item itemvalue="JUnit.BusTest.asSelecSinNumero" />
-        <item itemvalue="JUnit.AsientoFactoryTest.NumerodeAsientoInvalido" />
+        <item itemvalue="JUnit.AsientosBusTest.getAsiento" />
+        <item itemvalue="JUnit.AsientosBusTest.addTresAsientos" />
+        <item itemvalue="JUnit.AsientosBusTest.addAsiento" />
+        <item itemvalue="JUnit.BusTest.testCrearunBus" />
       </list>
     </recent_temporary>
   </component>
@@ -367,11 +370,17 @@
       <option name="project" value="LOCAL" />
       <updated>1687939890367</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Se crea clase Comprador y Recorrido para facilitar la reserva de asientos en la parte logica">
+      <created>1687975376776</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1687975376776</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Se crean horarios hipoteticos e iconos de asientos libres y ocupados" />
     <MESSAGE value="Se optimiza creacion de horarios y se agrega funcionalidad al boton de buscar." />
     <MESSAGE value="Se crean asientos mediante ciclo for" />
     <MESSAGE value="Se implementa funcion de asiento libre y ocupado" />
@@ -396,19 +405,20 @@
     <MESSAGE value="Se actualiza funcionalidad que entrega informacion de los asientos seleccionados/comprados y del recorrido elegido" />
     <MESSAGE value="Se crean excepciones y se agregan donde corresponde." />
     <MESSAGE value="Se crean Unit Tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="Se crean Unit Tests" />
+    <MESSAGE value="Se crea clase Comprador y Recorrido para facilitar la reserva de asientos en la parte logica" />
+    <option name="LAST_COMMIT_MESSAGE" value="Se crea clase Comprador y Recorrido para facilitar la reserva de asientos en la parte logica" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/test/java/org/example/logica/AsientoFactoryTest.java</url>
-          <line>30</line>
-          <properties class="org.example.logica.AsientoFactoryTest" method="obtenerAsiento">
+          <url>file://$PROJECT_DIR$/src/test/java/org/example/logica/ReservadorTest.java</url>
+          <line>31</line>
+          <properties class="org.example.logica.ReservadorTest" method="ReservaunAsiento">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
-          <option name="timeStamp" value="2" />
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

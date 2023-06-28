@@ -19,7 +19,12 @@ class AsientoFactoryTest {
     @AfterEach
     void tearDown() {
     }
-
+    @Test
+    @DisplayName("NumerodeAsientoValido")
+    void NumerodeAsientoValido() throws TipodeAsientoInvalidoException{
+        System.out.println("Numero de Asiento Valido");
+        assertNotNull(af.obtenerAsiento(TipodeAsientos.SEMICAMA,2).getPosicion());
+    }
     @Test
     @DisplayName("NumerodeAsientoInvalido")
     void NumerodeAsientoInvalido() throws TipodeAsientoInvalidoException{

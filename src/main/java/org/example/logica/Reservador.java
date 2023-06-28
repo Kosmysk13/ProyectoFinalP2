@@ -1,9 +1,9 @@
 package org.example.logica;
 
 /**
- * Comprador utiliza el expendedor, entregando una moneda, eligiendo producto, quizas monedas como vuelto e indica que consumio
+ * Reservador utiliza un Bus, entregando un numero entero, eligiendo un asiento, quizas monedas como vuelto e indica que consumio
  */
-public class Comprador{
+public class Reservador {
     private String info=null;
     private Asiento as;
 
@@ -12,7 +12,7 @@ public class Comprador{
      * @param
      * @throws
      */
-    public Comprador (Bus b, int numAsiento) throws Exception{
+    public Reservador(Bus b, int numAsiento) throws Exception{
         as = null;
         Bus bus = b;
         as = bus.asSelec(numAsiento);

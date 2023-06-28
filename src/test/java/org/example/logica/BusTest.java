@@ -21,6 +21,12 @@ class BusTest {
         }
     }
     @Test
+    @DisplayName("Test Recorrido Normal")
+    public void testCrearunBus() throws AsientoInvalidoException, TipodeAsientoInvalidoException, RecorridoIncorrectoException {
+        System.out.println("BusConRecorridoNormal");
+        assertNotNull(bus2 = new Bus(Recorridos.CONCEPCIONCHILLAN));
+    }
+    @Test
     @DisplayName("Test Recorrido null")
     public void testCrearBusSinRecorrido() throws RecorridoIncorrectoException{
         System.out.println("BusSinRecorrido");

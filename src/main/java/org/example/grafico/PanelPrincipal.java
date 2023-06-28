@@ -15,7 +15,7 @@ import java.awt.event.ActionListener;
 public class PanelPrincipal extends JPanel implements ActionListener{
     private PanelAsientos pa;
     private PanelHorarios ph;
-    private Comprador com;
+    private Reservador com;
     private PanelRecorridos pr;
     private Bus[][] bus;
     private JComboBox origen,destino,pisoBus;
@@ -362,7 +362,7 @@ public class PanelPrincipal extends JPanel implements ActionListener{
             for (int k=0;k<53;k++){
                 if (ocupado[auxCualRec][auxCualHorario][k]==1){
                     try {
-                        com = new Comprador(bus[auxCualRec][auxCualHorario],k);
+                        com = new Reservador(bus[auxCualRec][auxCualHorario],k);
                     } catch (Exception ex) {
                         throw new RuntimeException(ex);
                     }
