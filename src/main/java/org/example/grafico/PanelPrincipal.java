@@ -15,6 +15,7 @@ import java.awt.event.ActionListener;
 public class PanelPrincipal extends JPanel implements ActionListener{
     private PanelAsientos pa;
     private PanelHorarios ph;
+    private Comprador com;
     private PanelRecorridos pr;
     private Bus[][] bus;
     private JComboBox origen,destino,pisoBus;
@@ -360,11 +361,13 @@ public class PanelPrincipal extends JPanel implements ActionListener{
         if (e.getSource()==ConfirmarPago){
             for (int k=0;k<53;k++){
                 if (ocupado[auxCualRec][auxCualHorario][k]==1){
+                    try {
+                        com = new Comprador(bus[auxCualRec][auxCualHorario],k);
+                    } catch (Exception ex) {
+                        throw new RuntimeException(ex);
+                    }
+                    com.infoAsiento();
                     asAux = bus[auxCualRec][auxCualHorario].asSelec(k);
-                    System.out.println("\nSe ha reservado el asiento numero: "+asAux.getNumAsiento());
-                    System.out.println("El tipo de asiento es: "+asAux.getTipoAsiento());
-                    System.out.println("Está posicionado en: "+asAux.getPosicion());
-                    System.out.println("El valor del asiento es: $"+asAux.getPrecio()+"\n");
                     PrecioTotal = PrecioTotal+asAux.getPrecio();
                     ocupado[auxCualRec][auxCualHorario][k]=2;
                 }
