@@ -18,13 +18,13 @@ public class Bus {
         }
         af = new AsientoFactory();
         for (int i=0;i<5;i++){
-            ab.addAsiento(af.obtenerAsiento(TipodeAsientos.PREMIUM,recorrido+i));
+            ab.addAsiento(af.obtenerAsiento(TipodeAsientos.PREMIUM,i));
         }
         for (int i=5;i<17;i++){
-            ab.addAsiento(af.obtenerAsiento(TipodeAsientos.SALONCAMA,recorrido+i));
+            ab.addAsiento(af.obtenerAsiento(TipodeAsientos.SALONCAMA,i));
         }
         for (int i=17;i<53;i++){
-            ab.addAsiento(af.obtenerAsiento(TipodeAsientos.SEMICAMA,recorrido+i));
+            ab.addAsiento(af.obtenerAsiento(TipodeAsientos.SEMICAMA,i));
         }
     }
     public Asiento asSelec(int cualAs){

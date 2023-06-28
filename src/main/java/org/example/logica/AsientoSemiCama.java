@@ -7,10 +7,12 @@ public class AsientoSemiCama implements Asiento{
         num = a;
     }
     public String getPosicion(){
-        if ((num%2)==0){
+        if (num<26){
             return "ventana";
-        }else {
+        }else if(num<44){
             return "pasillo";
+        }else{
+            return "ventana";
         }
     }
     public int getNumAsiento(){

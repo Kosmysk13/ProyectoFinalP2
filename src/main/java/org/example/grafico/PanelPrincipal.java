@@ -16,16 +16,17 @@ public class PanelPrincipal extends JPanel implements ActionListener{
     private PanelHorarios ph;
     private PanelRecorridos pr;
     private Recorrido recorrido;
-    private Bus[] bus;
+    private Bus[][] bus;
     private BusesRec buses;
     private JComboBox origen,destino,pisoBus;
     private JButton busqueda,ConfirmarPago,ElegirHorario,asientos[][][];
     private JRadioButton[][] horarios;
     private ButtonGroup horariosG;
     private JPanel PanelRecorridos;
+    private Asiento asAux;
     private String ciudadOrigen[],ciudadDestino[],pisosB[],auxRecOrigen,auxRecDestino;
     private boolean[][][] ocupado;
-    private int hora=12,auxCualHorario,auxCualRec,auxElegirH=0;
+    private int hora=12,auxCualHorario,auxCualRec,auxElegirH=0,PrecioTotal;
     /**
      * Metodo constructor que crea instancias del panel comprador y panel expendedor
      * Ademas define los limites del panel
@@ -91,14 +92,16 @@ public class PanelPrincipal extends JPanel implements ActionListener{
 
         horarios = new JRadioButton[6][6];
         horariosG = new ButtonGroup();
-        bus = new Bus[6];
+        bus = new Bus[6][6];
+        for (int i=0;i<6;i++){
+            bus[0][i] = new Bus("CHILLANCONCEPCION");
+            bus[1][i] = new Bus("CHILLANLOS_ANGELES");
+            bus[2][i] = new Bus("CONCEPCIONLOS_ANGELES");
+            bus[3][i] = new Bus("CONCEPCIONCHILLAN");
+            bus[4][i] = new Bus("LOS_ANGELESCONCEPCION");
+            bus[5][i] = new Bus("LOS_ANGELESCHILLAN");
+        }
 
-        bus[0] = new Bus("CHILLANCONCEPCION");
-        bus[1] = new Bus("CHILLANLOS_ANGELES");
-        bus[2] = new Bus("CONCEPCIONLOS_ANGELES");
-        bus[3] = new Bus("CONCEPCIONCHILLAN");
-        bus[4] = new Bus("LOS_ANGELESCONCEPCION");
-        bus[5] = new Bus("LOS_ANGELESCHILLAN");
 
         for (int i=0;i<6;i++){
             for (int j=0;j<6;j++){
@@ -113,12 +116,6 @@ public class PanelPrincipal extends JPanel implements ActionListener{
                 repaint();
             }
         }
-        System.out.println(bus[0].asSelec(3).getNumAsiento());
-        bus[0].asSelec(3).setDisponibilidad(false);
-        System.out.println(bus[0].asSelec(3).getDisponibilidad());
-        System.out.println(bus[0].asSelec(3).getPrecio());
-        System.out.println(bus[0].asSelec(3).getPosicion());
-
 
         for (int i=0;i<6;i++){
             for (int j=0;j<6;j++){
@@ -257,7 +254,6 @@ public class PanelPrincipal extends JPanel implements ActionListener{
             if (auxElegirH==1){
                 for (int k=0;k<17;k++){
                     asientos[auxCualRec][auxCualHorario][k].setVisible(true);
-                    asientos[auxCualRec][auxCualHorario][k].setVisible(true);
                 }
             auxElegirH=2;
             }
@@ -311,15 +307,20 @@ public class PanelPrincipal extends JPanel implements ActionListener{
             }
         }
         if (e.getSource()==ConfirmarPago){
-            for (int i=0;i<6;i++){
-                for (int j=0;j<6;j++){
-                    for (int k=0;k<53;k++){
-                        if (ocupado[auxCualRec][auxCualHorario][k]==true){
-                            asientos[auxCualRec][auxCualHorario][k].removeActionListener(this);
-                        }
-                    }
+            for (int k=0;k<53;k++){
+                if (ocupado[auxCualRec][auxCualHorario][k]==true){
+                    asientos[auxCualRec][auxCualHorario][k].removeActionListener(this);
+                    asAux = bus[auxCualRec][auxCualHorario].asSelec(k);
+                    System.out.println("Se ha reservado el asiento numero: "+asAux.getNumAsiento());
+                    System.out.println("El tipo de asiento es: "+asAux.getTipoAsiento());
+                    System.out.println("Está posicionado en: "+asAux.getPosicion());
+                    System.out.println("El valor de este asiento es: "+asAux.getPrecio());
+                    System.out.println();
+                    PrecioTotal = PrecioTotal+asAux.getPrecio();
                 }
             }
+            System.out.println("El precio total es: "+PrecioTotal);
+            PrecioTotal = 0;
         }
     }
 }
