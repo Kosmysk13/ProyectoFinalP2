@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db516c12-abac-4e8e-b482-ebdaf0db48a9" name="Changes" comment="Se crea clase Comprador y Recorrido para facilitar la reserva de asientos en la parte logica">
+    <list default="true" id="db516c12-abac-4e8e-b482-ebdaf0db48a9" name="Changes" comment="Se crean ultimos unit test">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/grafico/PanelPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/grafico/PanelPrincipal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/logica/Comprador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/logica/Reservador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/logica/AsientoFactoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/logica/AsientoFactoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/logica/BusTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/logica/BusTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +16,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -377,11 +373,17 @@
       <option name="project" value="LOCAL" />
       <updated>1687975376776</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Se crean ultimos unit test">
+      <created>1687990958572</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1687990958572</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Se optimiza creacion de horarios y se agrega funcionalidad al boton de buscar." />
     <MESSAGE value="Se crean asientos mediante ciclo for" />
     <MESSAGE value="Se implementa funcion de asiento libre y ocupado" />
     <MESSAGE value="Se cambia de nombre a archivos y se crean clases asiento y PanelAsientos vacias" />
@@ -406,7 +408,8 @@
     <MESSAGE value="Se crean excepciones y se agregan donde corresponde." />
     <MESSAGE value="Se crean Unit Tests" />
     <MESSAGE value="Se crea clase Comprador y Recorrido para facilitar la reserva de asientos en la parte logica" />
-    <option name="LAST_COMMIT_MESSAGE" value="Se crea clase Comprador y Recorrido para facilitar la reserva de asientos en la parte logica" />
+    <MESSAGE value="Se crean ultimos unit test" />
+    <option name="LAST_COMMIT_MESSAGE" value="Se crean ultimos unit test" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
