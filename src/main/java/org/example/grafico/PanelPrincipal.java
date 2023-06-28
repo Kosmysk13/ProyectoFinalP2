@@ -1,5 +1,9 @@
 package org.example.grafico;
 
+import org.example.excepciones.AsientoOcupadoException;
+import org.example.excepciones.HorarioInvalidoException;
+import org.example.excepciones.NoHayAsientoSeleccionadoException;
+import org.example.excepciones.RecorridoIncorrectoException;
 import org.example.logica.*;
 
 import javax.swing.*;
@@ -41,8 +45,8 @@ public class PanelPrincipal extends JPanel implements ActionListener{
         pr = new PanelRecorridos();
         this.add(pr);
 
-        ciudadOrigen = new String[] {String.valueOf(Recorridos.CHILLAN), String.valueOf(Recorridos.CONCEPCION),String.valueOf(Recorridos.LOS_ANGELES)};
-        ciudadDestino = new String[] {String.valueOf(Recorridos.CONCEPCION),String.valueOf(Recorridos.CHILLAN),String.valueOf(Recorridos.LOS_ANGELES)};
+        ciudadOrigen = new String[] {"",String.valueOf(Recorridos.CHILLAN), String.valueOf(Recorridos.CONCEPCION),String.valueOf(Recorridos.LOS_ANGELES)};
+        ciudadDestino = new String[] {"",String.valueOf(Recorridos.CONCEPCION),String.valueOf(Recorridos.CHILLAN),String.valueOf(Recorridos.LOS_ANGELES)};
         pisosB = new String[] {"PRIMER   PISO","SEGUNDO   PISO"};
         asientos = new JButton[6][6][53];
         ocupado = new int[6][6][53];
@@ -199,17 +203,19 @@ public class PanelPrincipal extends JPanel implements ActionListener{
     }
 
     @Override
-    public void actionPerformed(ActionEvent e) {
+    public void actionPerformed(ActionEvent e){
         if (e.getSource()==origen){
-            if (auxRecOrigen!=null){
-                destino.addItem(auxRecOrigen);
-                for (int k=0;k<53;k++){
-                    asientos[auxCualRec][auxCualHorario][k].setVisible(false);
-                    repaint();
+            if (origen.getSelectedItem().toString()!=""){
+                if (auxRecOrigen!=null){
+                    destino.addItem(auxRecOrigen);
+                    for (int k=0;k<53;k++){
+                        asientos[auxCualRec][auxCualHorario][k].setVisible(false);
+                        repaint();
+                    }
                 }
+                auxRecOrigen = origen.getSelectedItem().toString();
+                destino.removeItem(origen.getSelectedItem());
             }
-            auxRecOrigen = origen.getSelectedItem().toString();
-            destino.removeItem(origen.getSelectedItem());
         }
         if (e.getSource()==destino){
             for (int k=0;k<53;k++){
@@ -219,24 +225,38 @@ public class PanelPrincipal extends JPanel implements ActionListener{
             auxRecDestino = destino.getSelectedItem().toString();
         }
         if (e.getSource()==busqueda){
-            if (auxRecOrigen=="CHILLAN"&&auxRecDestino=="CONCEPCION"){
-                auxCualRec = 0;
-            }else if (auxRecOrigen=="CHILLAN"&&auxRecDestino=="LOS_ANGELES"){
-                auxCualRec = 1;
-            }else if (auxRecOrigen=="CONCEPCION"&&auxRecDestino=="LOS_ANGELES"){
-                auxCualRec = 2;
-            }else if (auxRecOrigen=="CONCEPCION"&&auxRecDestino=="CHILLAN"){
-                auxCualRec = 3;
-            }else if (auxRecOrigen=="LOS_ANGELES"&&auxRecDestino=="CONCEPCION"){
-                auxCualRec = 4;
-            }else if (auxRecOrigen=="LOS_ANGELES"&&auxRecDestino=="CHILLAN"){
-                auxCualRec = 5;
+            if (origen.getSelectedItem()==null||origen.getSelectedItem().toString()==""){
+                try {
+                    throw new RecorridoIncorrectoException("Recorrido invalido, origen y/o destino incorrecto");
+                } catch (RecorridoIncorrectoException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }else if(destino.getSelectedItem()==null||destino.getSelectedItem().toString()==""){
+                try {
+                    throw new RecorridoIncorrectoException("Recorrido invalido, destino incorrecto");
+                } catch (RecorridoIncorrectoException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }else {
+                if (auxRecOrigen=="CHILLAN"&&auxRecDestino=="CONCEPCION"){
+                    auxCualRec = 0;
+                }else if (auxRecOrigen=="CHILLAN"&&auxRecDestino=="LOS_ANGELES"){
+                    auxCualRec = 1;
+                }else if (auxRecOrigen=="CONCEPCION"&&auxRecDestino=="LOS_ANGELES"){
+                    auxCualRec = 2;
+                }else if (auxRecOrigen=="CONCEPCION"&&auxRecDestino=="CHILLAN"){
+                    auxCualRec = 3;
+                }else if (auxRecOrigen=="LOS_ANGELES"&&auxRecDestino=="CONCEPCION"){
+                    auxCualRec = 4;
+                }else if (auxRecOrigen=="LOS_ANGELES"&&auxRecDestino=="CHILLAN"){
+                    auxCualRec = 5;
+                }
+                for (int j=0;j<6;j++){
+                    horarios[auxCualRec][j].setVisible(true);
+                    repaint();
+                }
+                System.out.println("Se ha elegido recorrido desde: "+auxRecOrigen+" hasta: "+auxRecDestino);
             }
-            for (int j=0;j<6;j++){
-                horarios[auxCualRec][j].setVisible(true);
-                repaint();
-            }
-            System.out.println("Se ha elegido recorrido desde: "+auxRecOrigen+" hasta: "+auxRecDestino);
         }
         for (int i=0;i<6;i++){
             for (int j=0;j<6;j++){
@@ -250,11 +270,17 @@ public class PanelPrincipal extends JPanel implements ActionListener{
             }
         }
         if (e.getSource()==ElegirHorario){
-            if (auxElegirH==1){
+            if (auxElegirH!=1){
+                try {
+                    throw new HorarioInvalidoException("No se ha elegido un horario");
+                } catch (HorarioInvalidoException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }else if(auxElegirH==1){
                 for (int k=0;k<17;k++){
                     asientos[auxCualRec][auxCualHorario][k].setVisible(true);
                 }
-            auxElegirH=2;
+                auxElegirH=2;
             }
             repaint();
         }
@@ -283,31 +309,49 @@ public class PanelPrincipal extends JPanel implements ActionListener{
                         asientos[auxCualRec][auxCualHorario][k].setIcon(new ImageIcon("src/main/java/org/example/elementosPanel/asientoPOcupado.png"));
                         ocupado[auxCualRec][auxCualHorario][k]=1;
                         System.out.println("Se ha seleccionado el asiento numero: "+bus[auxCualRec][auxCualHorario].asSelec(k).getNumAsiento());
-                    }else{
+                    }else if (ocupado[auxCualRec][auxCualHorario][k]==1){
                         asientos[auxCualRec][auxCualHorario][k].setIcon(new ImageIcon("src/main/java/org/example/elementosPanel/asientoPLibre.png"));
                         ocupado[auxCualRec][auxCualHorario][k]=0;
                         System.out.println("Se ha deseleccionado el asiento numero: "+bus[auxCualRec][auxCualHorario].asSelec(k).getNumAsiento());
+                    }else{
+                        try {
+                            throw new AsientoOcupadoException("No se puede seleccionar, el asiento numero:"+bus[auxCualRec][auxCualHorario].asSelec(k).getNumAsiento()+" ya esta reservado");
+                        } catch (AsientoOcupadoException ex) {
+                            throw new RuntimeException(ex);
+                        }
                     }
                 }else if (k<17){
                     if (ocupado[auxCualRec][auxCualHorario][k]==0){
                         asientos[auxCualRec][auxCualHorario][k].setIcon(new ImageIcon("src/main/java/org/example/elementosPanel/asientoCOcupado.png"));
                         ocupado[auxCualRec][auxCualHorario][k]=1;
                         System.out.println("Se ha seleccionado el asiento numero: "+bus[auxCualRec][auxCualHorario].asSelec(k).getNumAsiento());
-                    }else{
+                    }else if(ocupado[auxCualRec][auxCualHorario][k]==1){
                         asientos[auxCualRec][auxCualHorario][k].setIcon(new ImageIcon("src/main/java/org/example/elementosPanel/asientoCLibre.png"));
                         ocupado[auxCualRec][auxCualHorario][k]=0;
                         System.out.println("Se ha deseleccionado el asiento numero: "+bus[auxCualRec][auxCualHorario].asSelec(k).getNumAsiento());
+                    }else{
+                        try {
+                            throw new AsientoOcupadoException("No se puede seleccionar, el asiento numero:"+bus[auxCualRec][auxCualHorario].asSelec(k).getNumAsiento()+" ya esta reservado");
+                        } catch (AsientoOcupadoException ex) {
+                            throw new RuntimeException(ex);
+                        }
                     }
                 }else{
                     if (ocupado[auxCualRec][auxCualHorario][k]==0){
                         asientos[auxCualRec][auxCualHorario][k].setIcon(new ImageIcon("src/main/java/org/example/elementosPanel/asientoSCOcupado.png"));
                         ocupado[auxCualRec][auxCualHorario][k]=1;
                         System.out.println("Se ha seleccionado el asiento numero: "+bus[auxCualRec][auxCualHorario].asSelec(k).getNumAsiento());
-                    }else{
+                    }else if(ocupado[auxCualRec][auxCualHorario][k]==1){
                         asientos[auxCualRec][auxCualHorario][k].setIcon(new ImageIcon("src/main/java/org/example/elementosPanel/asientoSCLibre.png"));
                         ocupado[auxCualRec][auxCualHorario][k]=0;
                         System.out.println("Se ha deseleccionado el asiento numero: "+bus[auxCualRec][auxCualHorario].asSelec(k).getNumAsiento());
 
+                    }else{
+                        try {
+                            throw new AsientoOcupadoException("No se puede seleccionar, el asiento numero:"+bus[auxCualRec][auxCualHorario].asSelec(k).getNumAsiento()+" ya esta reservado");
+                        } catch (AsientoOcupadoException ex) {
+                            throw new RuntimeException(ex);
+                        }
                     }
                 }
             }
@@ -315,17 +359,22 @@ public class PanelPrincipal extends JPanel implements ActionListener{
         if (e.getSource()==ConfirmarPago){
             for (int k=0;k<53;k++){
                 if (ocupado[auxCualRec][auxCualHorario][k]==1){
-                    asientos[auxCualRec][auxCualHorario][k].removeActionListener(this);
                     asAux = bus[auxCualRec][auxCualHorario].asSelec(k);
                     System.out.println("\nSe ha reservado el asiento numero: "+asAux.getNumAsiento());
                     System.out.println("El tipo de asiento es: "+asAux.getTipoAsiento());
                     System.out.println("Está posicionado en: "+asAux.getPosicion());
                     System.out.println("El valor del asiento es: $"+asAux.getPrecio()+"\n");
                     PrecioTotal = PrecioTotal+asAux.getPrecio();
-                    ocupado[auxCualRec][auxCualHorario][k]=3;
+                    ocupado[auxCualRec][auxCualHorario][k]=2;
                 }
             }
-            if (PrecioTotal!=0){
+            if (PrecioTotal==0){
+                try {
+                    throw new NoHayAsientoSeleccionadoException("No hay asientos seleccionados para reservar");
+                } catch (NoHayAsientoSeleccionadoException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }else{
                 System.out.println("El precio total es: $"+PrecioTotal+"\n");
             }
             PrecioTotal = 0;
