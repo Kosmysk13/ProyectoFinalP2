@@ -1,14 +1,19 @@
 package org.example.logica;
 
+import org.example.excepciones.AsientoInvalidoException;
+import org.example.excepciones.RecorridoIncorrectoException;
+import org.example.excepciones.TipodeAsientoInvalidoException;
+
 public class Bus {
     private AsientosBus ab;
     private int recorrido;
-    private String rec;
     protected AsientoFactory af;
-    public Bus(String r){
+    public Bus(Recorridos r) throws TipodeAsientoInvalidoException, AsientoInvalidoException, RecorridoIncorrectoException {
+        if (r==null){
+            throw new RecorridoIncorrectoException("Recorrido null");
+        }
         ab = new AsientosBus();
-        rec = r;
-        switch (rec){
+        switch (r.toString()){
             case "CHILLANCONCEPCION": recorrido=100;break;
             case "CHILLANLOS_ANGELES": recorrido=200;break;
             case "CONCEPCIONLOS_ANGELES": recorrido=300;break;
@@ -28,6 +33,14 @@ public class Bus {
         }
     }
     public Asiento asSelec(int cualAs){
-        return ab.getAsiento(cualAs);
+        if (cualAs>52){
+            try {
+                throw new AsientoInvalidoException("Asiento invalido");
+            } catch (AsientoInvalidoException e) {
+                throw new RuntimeException(e);
+            }
+        }else {
+            return ab.getAsiento(cualAs);
+        }
     }
 }

@@ -1,9 +1,6 @@
 package org.example.grafico;
 
-import org.example.excepciones.AsientoOcupadoException;
-import org.example.excepciones.HorarioInvalidoException;
-import org.example.excepciones.NoHayAsientoSeleccionadoException;
-import org.example.excepciones.RecorridoIncorrectoException;
+import org.example.excepciones.*;
 import org.example.logica.*;
 
 import javax.swing.*;
@@ -96,12 +93,16 @@ public class PanelPrincipal extends JPanel implements ActionListener{
         horariosG = new ButtonGroup();
         bus = new Bus[6][6];
         for (int i=0;i<6;i++){
-            bus[0][i] = new Bus("CHILLANCONCEPCION");
-            bus[1][i] = new Bus("CHILLANLOS_ANGELES");
-            bus[2][i] = new Bus("CONCEPCIONLOS_ANGELES");
-            bus[3][i] = new Bus("CONCEPCIONCHILLAN");
-            bus[4][i] = new Bus("LOS_ANGELESCONCEPCION");
-            bus[5][i] = new Bus("LOS_ANGELESCHILLAN");
+            try {
+                bus[0][i] = new Bus(Recorridos.CHILLANCONCEPCION);
+                bus[1][i] = new Bus(Recorridos.CHILLANLOS_ANGELES);
+                bus[2][i] = new Bus(Recorridos.CONCEPCIONLOS_ANGELES);
+                bus[3][i] = new Bus(Recorridos.CONCEPCIONCHILLAN);
+                bus[4][i] = new Bus(Recorridos.LOS_ANGELESCONCEPCION);
+                bus[5][i] = new Bus(Recorridos.LOS_ANGELESCHILLAN);
+            } catch (TipodeAsientoInvalidoException | AsientoInvalidoException | RecorridoIncorrectoException e) {
+                throw new RuntimeException(e);
+            }
         }
 
 

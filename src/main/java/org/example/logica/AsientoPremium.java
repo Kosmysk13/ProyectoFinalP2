@@ -6,7 +6,11 @@ public class AsientoPremium implements Asiento{
         num = a;
     }
     public String getPosicion(){
-        return "ventana";
+        if (num<5){
+            return "ventana";
+        }else{
+            return null;
+        }
     }
     public int getNumAsiento(){
         return num;

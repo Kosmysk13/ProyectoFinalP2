@@ -11,8 +11,10 @@ public class AsientoSemiCama implements Asiento{
             return "ventana";
         }else if(num<44){
             return "pasillo";
-        }else{
+        }else if(num<53){
             return "ventana";
+        }else{
+            return null;
         }
     }
     public int getNumAsiento(){

@@ -4,13 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db516c12-abac-4e8e-b482-ebdaf0db48a9" name="Changes" comment="Se actualiza funcionalidad que entrega informacion de los asientos seleccionados/comprados y del recorrido elegido">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/excepciones/AsientoOcupadoException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/excepciones/HorarioInvalidoException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/excepciones/NoHayAsientoSeleccionadoException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/excepciones/RecorridoIncorrectoException.java" afterDir="false" />
+    <list default="true" id="db516c12-abac-4e8e-b482-ebdaf0db48a9" name="Changes" comment="Se crean excepciones y se agregan donde corresponde.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/excepciones/AsientoInvalidoException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/excepciones/TipodeAsientoInvalidoException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/grafico/PanelPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/grafico/PanelPrincipal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/logica/AsientoFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/logica/AsientoFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/logica/AsientoPremium.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/logica/AsientoPremium.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/logica/AsientoSalonCama.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/logica/AsientoSalonCama.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/logica/AsientoSemiCama.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/logica/AsientoSemiCama.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/logica/Bus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/logica/Bus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/logica/Recorridos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/logica/Recorridos.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +25,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
+        <option value="JUnit5 Test Class" />
         <option value="Class" />
       </list>
     </option>
@@ -49,17 +54,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;TODO_SCOPE&quot;: &quot;All Places&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "TODO_SCOPE": "All Places",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Diego\Documents\GitHub\ProyectoFinalProgra2\src\main\java\org\example\elementosPanel" />
@@ -67,6 +74,104 @@
       <recent name="C:\Users\Diego\Documents\GitHub\ProyectoFinalProgra2\src\main\java" />
       <recent name="C:\Users\Diego\Documents\GitHub\ProyectoFinalProgra2\src\main\java\org\example" />
     </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="org.example.logica" />
+      <recent name="org.example.grafico" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.BusTest.testCrearBusSinRecorrido">
+    <configuration name="AsientoFactoryTest.NumerodeAsientoInvalido" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ProyectoFinalProgra2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.logica.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.logica" />
+      <option name="MAIN_CLASS_NAME" value="org.example.logica.AsientoFactoryTest" />
+      <option name="METHOD_NAME" value="NumerodeAsientoInvalido" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AsientoFactoryTest.TipodeAsientoInvalido" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ProyectoFinalProgra2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.logica.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.logica" />
+      <option name="MAIN_CLASS_NAME" value="org.example.logica.AsientoFactoryTest" />
+      <option name="METHOD_NAME" value="TipodeAsientoInvalido" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AsientoFactoryTest.obtenerAsiento" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ProyectoFinalProgra2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.logica.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.logica" />
+      <option name="MAIN_CLASS_NAME" value="org.example.logica.AsientoFactoryTest" />
+      <option name="METHOD_NAME" value="obtenerAsiento" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BusTest.asSelecSinNumero" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ProyectoFinalProgra2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.logica.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.logica" />
+      <option name="MAIN_CLASS_NAME" value="org.example.logica.BusTest" />
+      <option name="METHOD_NAME" value="asSelecSinNumero" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BusTest.testCrearBusSinRecorrido" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ProyectoFinalProgra2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.logica.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.logica" />
+      <option name="MAIN_CLASS_NAME" value="org.example.logica.BusTest" />
+      <option name="METHOD_NAME" value="testCrearBusSinRecorrido" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.BusTest.testCrearBusSinRecorrido" />
+        <item itemvalue="JUnit.AsientoFactoryTest.obtenerAsiento" />
+        <item itemvalue="JUnit.BusTest.asSelecSinNumero" />
+        <item itemvalue="JUnit.AsientoFactoryTest.NumerodeAsientoInvalido" />
+        <item itemvalue="JUnit.AsientoFactoryTest.TipodeAsientoInvalido" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -259,11 +364,17 @@
       <option name="project" value="LOCAL" />
       <updated>1687932928339</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Se crean excepciones y se agregan donde corresponde.">
+      <created>1687935154669</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1687935154669</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Creación de menus desplegables para recorridos y boton de busqueda" />
     <MESSAGE value="Se ajustan paneles de asientos, horarios y botones menu de los recorridos. Se agrega boton para simular pago" />
     <MESSAGE value="Se crean horarios hipoteticos e iconos de asientos libres y ocupados" />
     <MESSAGE value="Se optimiza creacion de horarios y se agrega funcionalidad al boton de buscar." />
@@ -288,6 +399,31 @@
     <MESSAGE value="Se instancian buses para que entreguen info de los asientos (aún por terminar)" />
     <MESSAGE value="Se integra funcionalidad que entrega informacion de los asientos comprados" />
     <MESSAGE value="Se actualiza funcionalidad que entrega informacion de los asientos seleccionados/comprados y del recorrido elegido" />
-    <option name="LAST_COMMIT_MESSAGE" value="Se actualiza funcionalidad que entrega informacion de los asientos seleccionados/comprados y del recorrido elegido" />
+    <MESSAGE value="Se crean excepciones y se agregan donde corresponde." />
+    <option name="LAST_COMMIT_MESSAGE" value="Se crean excepciones y se agregan donde corresponde." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/org/example/logica/AsientoFactoryTest.java</url>
+          <line>30</line>
+          <properties class="org.example.logica.AsientoFactoryTest" method="obtenerAsiento">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/org/example/logica/BusTest.java</url>
+          <line>37</line>
+          <properties class="org.example.logica.BusTest" method="asSelecSinNumero">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -9,8 +9,10 @@ public class AsientoSalonCama implements Asiento{
     public String getPosicion(){
         if (num<11){
             return "pasillo";
-        }else{
+        }else if (num<17){
             return "ventana";
+        }else{
+            return null;
         }
     }
     public int getNumAsiento(){
