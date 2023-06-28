@@ -3,6 +3,7 @@ public class AsientoSemiCama implements Asiento{
     private int num;
     private boolean disponible;
     public AsientoSemiCama(int a){
+        disponible=true;
         num = a;
     }
     public String getPosicion(){
@@ -21,8 +22,15 @@ public class AsientoSemiCama implements Asiento{
     public String getTipoAsiento(){
         return "SemiCama";
     }
-    public boolean getDisponibilidad(){
-        return disponible;
+    public void setDisponibilidad(boolean aux){
+        disponible = aux;
+    }
+    public String getDisponibilidad(){
+        if (disponible==true){
+            return "disponible";
+        }else{
+            return "ocupado";
+        }
     }
 }
 

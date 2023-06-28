@@ -4,11 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db516c12-abac-4e8e-b482-ebdaf0db48a9" name="Changes" comment="Se corrige error que provocaba que se marcaran como &quot;desocupados&quot; asientos ocupados">
+    <list default="true" id="db516c12-abac-4e8e-b482-ebdaf0db48a9" name="Changes" comment="Se agrega metodo para obtener el precio del tipo de asiento">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/grafico/PanelPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/grafico/PanelPrincipal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/logica/Asiento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/logica/Asiento.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/logica/AsientoPremium.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/logica/AsientoPremium.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/logica/AsientoSalonCama.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/logica/AsientoSalonCama.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/logica/AsientoSemiCama.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/logica/AsientoSemiCama.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/logica/AsientosBus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/logica/AsientosBus.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/logica/Bus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/logica/Bus.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -230,7 +233,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687907342782</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Se agrega metodo para obtener el precio del tipo de asiento">
+      <created>1687908281132</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1687908281132</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -256,6 +266,7 @@
     <MESSAGE value="Se agrega variable para diferenciar buses entre horario y horario" />
     <MESSAGE value="Limpieza de codigo" />
     <MESSAGE value="Se corrige error que provocaba que se marcaran como &quot;desocupados&quot; asientos ocupados" />
-    <option name="LAST_COMMIT_MESSAGE" value="Se corrige error que provocaba que se marcaran como &quot;desocupados&quot; asientos ocupados" />
+    <MESSAGE value="Se agrega metodo para obtener el precio del tipo de asiento" />
+    <option name="LAST_COMMIT_MESSAGE" value="Se agrega metodo para obtener el precio del tipo de asiento" />
   </component>
 </project>

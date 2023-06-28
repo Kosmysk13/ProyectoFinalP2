@@ -1,6 +1,6 @@
 package org.example.grafico;
 
-import org.example.logica.Recorridos;
+import org.example.logica.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -15,13 +15,15 @@ public class PanelPrincipal extends JPanel implements ActionListener{
     private PanelAsientos pa;
     private PanelHorarios ph;
     private PanelRecorridos pr;
+    private Recorrido recorrido;
+    private Bus[] bus;
+    private BusesRec buses;
     private JComboBox origen,destino,pisoBus;
     private JButton busqueda,ConfirmarPago,ElegirHorario,asientos[][][];
     private JRadioButton[][] horarios;
     private ButtonGroup horariosG;
     private JPanel PanelRecorridos;
-    private String[] ciudadOrigen,ciudadDestino,pisosB;
-    private String auxRecOrigen,auxRecDestino;
+    private String ciudadOrigen[],ciudadDestino[],pisosB[],auxRecOrigen,auxRecDestino;
     private boolean[][][] ocupado;
     private int hora=12,auxCualHorario,auxCualRec,auxElegirH=0;
     /**
@@ -89,6 +91,14 @@ public class PanelPrincipal extends JPanel implements ActionListener{
 
         horarios = new JRadioButton[6][6];
         horariosG = new ButtonGroup();
+        bus = new Bus[6];
+
+        bus[0] = new Bus("CHILLANCONCEPCION");
+        bus[1] = new Bus("CHILLANLOS_ANGELES");
+        bus[2] = new Bus("CONCEPCIONLOS_ANGELES");
+        bus[3] = new Bus("CONCEPCIONCHILLAN");
+        bus[4] = new Bus("LOS_ANGELESCONCEPCION");
+        bus[5] = new Bus("LOS_ANGELESCHILLAN");
 
         for (int i=0;i<6;i++){
             for (int j=0;j<6;j++){
@@ -103,6 +113,12 @@ public class PanelPrincipal extends JPanel implements ActionListener{
                 repaint();
             }
         }
+        System.out.println(bus[0].asSelec(3).getNumAsiento());
+        bus[0].asSelec(3).setDisponibilidad(false);
+        System.out.println(bus[0].asSelec(3).getDisponibilidad());
+        System.out.println(bus[0].asSelec(3).getPrecio());
+        System.out.println(bus[0].asSelec(3).getPosicion());
+
 
         for (int i=0;i<6;i++){
             for (int j=0;j<6;j++){

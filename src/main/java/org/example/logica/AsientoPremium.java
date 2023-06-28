@@ -21,8 +21,15 @@ public class AsientoPremium implements Asiento{
     public String getTipoAsiento(){
         return "Premium";
     }
-    public boolean getDisponibilidad(){
-        return disponible;
+    public void setDisponibilidad(boolean aux){
+        disponible = aux;
+    }
+    public String getDisponibilidad(){
+        if (disponible==true){
+            return "disponible";
+        }else{
+            return "ocupado";
+        }
     }
 }
 

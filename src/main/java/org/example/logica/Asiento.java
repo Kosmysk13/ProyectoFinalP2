@@ -4,6 +4,7 @@ public interface Asiento{
     public String getPosicion();
     public int getNumAsiento();
     public String getTipoAsiento();
-    public boolean getDisponibilidad();
+    public void setDisponibilidad(boolean aux);
+    public String getDisponibilidad();
     public int getPrecio();
 }

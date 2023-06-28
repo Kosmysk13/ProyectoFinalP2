@@ -3,9 +3,11 @@ package org.example.logica;
 public class Bus {
     private AsientosBus ab;
     private int recorrido;
-    private AsientoFactory af;
-    public Bus(String rec){
+    private String rec;
+    protected AsientoFactory af;
+    public Bus(String r){
         ab = new AsientosBus();
+        rec = r;
         switch (rec){
             case "CHILLANCONCEPCION": recorrido=100;break;
             case "CHILLANLOS_ANGELES": recorrido=200;break;
@@ -27,5 +29,8 @@ public class Bus {
     }
     public Asiento asSelec(int cualAs){
         return ab.getAsiento(cualAs);
+    }
+    public String getRecorrido(){
+        return rec;
     }
 }

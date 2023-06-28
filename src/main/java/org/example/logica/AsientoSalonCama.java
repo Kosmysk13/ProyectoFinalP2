@@ -7,7 +7,7 @@ public class AsientoSalonCama implements Asiento{
         num = a;
     }
     public String getPosicion(){
-        if ((num%2)==0){
+        if (num<5){
             return "ventana";
         }else {
             return "pasillo";
@@ -22,8 +22,15 @@ public class AsientoSalonCama implements Asiento{
     public String getTipoAsiento(){
         return "SalonCama";
     }
-    public boolean getDisponibilidad(){
-        return disponible;
+    public void setDisponibilidad(boolean aux){
+        disponible = aux;
+    }
+    public String getDisponibilidad(){
+        if (disponible==true){
+            return "disponible";
+        }else{
+            return "ocupado";
+        }
     }
 }
 

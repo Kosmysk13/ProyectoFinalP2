@@ -12,8 +12,10 @@ public class AsientosBus{
     public Asiento getAsiento(int cualAs){
         if (arrAs.size()>0){
             Asiento as1 = arrAs.get(cualAs);
-            arrAs.remove(cualAs);
-            return as1;
+            Asiento auxAs = as1;
+            as1.setDisponibilidad(false);
+            arrAs.set(cualAs,as1);
+            return auxAs;
         }else{
             return null;
         }
