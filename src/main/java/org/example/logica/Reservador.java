@@ -1,18 +1,20 @@
 package org.example.logica;
 
 /**
- * Reservador utiliza un Bus, entregando un numero entero, eligiendo un asiento, quizas monedas como vuelto e indica que consumio
+ * Reservador utiliza un Bus, entregando un numero entero, eligiendo un asiento e indica que las caracteristicas del asiento
  */
 public class Reservador {
-    private String info=null;
+    /**
+     * Variable local que sirve de auxiliar para guardar el asiento que se reservara
+     */
     private Asiento as;
 
     /**
-     *
-     * @param
-     * @throws
+     * Metodo constructor que crea un reservador encargado de reservar un asiento en especifico de un bus en especifico.
+     * @param b Variable ingresada por parametro que indica el Bus en donde se reservara un asiento
+     * @param numAsiento Variable que especifica cual numero de asiento se va a intentar reservar
      */
-    public Reservador(Bus b, int numAsiento) throws Exception{
+    public Reservador(Bus b, int numAsiento){
         as = null;
         Bus bus = b;
         as = bus.asSelec(numAsiento);
@@ -22,7 +24,8 @@ public class Reservador {
     }
 
     /**
-     * @return retorna la cantidad total del vuelto que se recibe, si es que es el caso
+     * Metodo que se encargar de entregar toda la informacion respecto al asiento seleccionado para la reserva
+     * esto incluye el numero, tipo, posicion y el precio
      */
     public void infoAsiento(){
         System.out.println("\nSe ha reservado el asiento numero: "+as.getNumAsiento());

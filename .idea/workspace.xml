@@ -4,8 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db516c12-abac-4e8e-b482-ebdaf0db48a9" name="Changes" comment="Se crean ultimos unit test">
+    <list default="true" id="db516c12-abac-4e8e-b482-ebdaf0db48a9" name="Changes" comment="Se intenta crear Iterator de asientos, pero no se integra en el programa">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/grafico/PanelPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/grafico/PanelPrincipal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/grafico/PanelRecorridos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/grafico/PanelRecorridos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/grafico/Ventana.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/grafico/Ventana.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/logica/Asiento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/logica/Asiento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/logica/AsientoFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/logica/AsientoFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/logica/AsientoPremium.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/logica/AsientoPremium.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/logica/AsientoSalonCama.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/logica/AsientoSalonCama.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/logica/AsientoSemiCama.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/logica/AsientoSemiCama.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/logica/AsientosBus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/logica/AsientosBus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/logica/AsientosIterator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/logica/AsientosIterator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/logica/Bus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/logica/Bus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/logica/Recorrido.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/logica/Recorridos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/logica/Recorridos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/logica/Reservador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/logica/Reservador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/logica/TipodeAsientos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/logica/TipodeAsientos.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,7 +150,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BusTest.testCrearunBus" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ReservadorTest.ReservaUnAsientoInexistente" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ProyectoFinalProgra2" />
       <extension name="coverage">
         <pattern>
@@ -144,8 +159,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.example.logica" />
-      <option name="MAIN_CLASS_NAME" value="org.example.logica.BusTest" />
-      <option name="METHOD_NAME" value="testCrearunBus" />
+      <option name="MAIN_CLASS_NAME" value="org.example.logica.ReservadorTest" />
+      <option name="METHOD_NAME" value="ReservaUnAsientoInexistente" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -154,10 +169,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.ReservadorTest.ReservaUnAsientoInexistente" />
         <item itemvalue="JUnit.AsientosBusTest.getAsiento" />
         <item itemvalue="JUnit.AsientosBusTest.addTresAsientos" />
         <item itemvalue="JUnit.AsientosBusTest.addAsiento" />
-        <item itemvalue="JUnit.BusTest.testCrearunBus" />
       </list>
     </recent_temporary>
   </component>
@@ -380,11 +395,17 @@
       <option name="project" value="LOCAL" />
       <updated>1687990958572</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Se intenta crear Iterator de asientos, pero no se integra en el programa">
+      <created>1687991569015</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1687991569015</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Se crean asientos mediante ciclo for" />
     <MESSAGE value="Se implementa funcion de asiento libre y ocupado" />
     <MESSAGE value="Se cambia de nombre a archivos y se crean clases asiento y PanelAsientos vacias" />
     <MESSAGE value="Se agregan diferentes tipos de asientos y boton para elegir horario. Cuando se presiona boton se muestran los asientos para ese horario" />
@@ -409,7 +430,8 @@
     <MESSAGE value="Se crean Unit Tests" />
     <MESSAGE value="Se crea clase Comprador y Recorrido para facilitar la reserva de asientos en la parte logica" />
     <MESSAGE value="Se crean ultimos unit test" />
-    <option name="LAST_COMMIT_MESSAGE" value="Se crean ultimos unit test" />
+    <MESSAGE value="Se intenta crear Iterator de asientos, pero no se integra en el programa" />
+    <option name="LAST_COMMIT_MESSAGE" value="Se intenta crear Iterator de asientos, pero no se integra en el programa" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

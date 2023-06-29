@@ -4,23 +4,25 @@ import org.example.excepciones.AsientoInvalidoException;
 import org.example.excepciones.RecorridoIncorrectoException;
 import org.example.excepciones.TipodeAsientoInvalidoException;
 
+/**
+ * Esta clase se encarga de crear Buses, con sus respectivos asientos dentro.
+ */
 public class Bus {
     private AsientosBus ab;
-    private int recorrido;
     protected AsientoFactory af;
+
+    /**
+     * Metodo constructor que se encarga de construir el Bus, con un recorrido como parametro y los asientos dentro, creados por una factory y guardados en un arraylist.
+     * @param r Variable que especifica el recorrido del bus
+     * @throws TipodeAsientoInvalidoException Si el tipo de asiento no existe en el Enum o es null, entrega el mensaje de error.
+     * @throws AsientoInvalidoException Si el numero de asiento elegido no esta disponible o esta fuera de los limites del bus, entrega el mensaje de error.
+     * @throws RecorridoIncorrectoException Si el recorrido no es valido o es null, entrega el mensaje de error.
+     */
     public Bus(Recorridos r) throws TipodeAsientoInvalidoException, AsientoInvalidoException, RecorridoIncorrectoException {
         if (r==null){
             throw new RecorridoIncorrectoException("Recorrido null");
         }
         ab = new AsientosBus();
-        switch (r.toString()){
-            case "CHILLANCONCEPCION": recorrido=100;break;
-            case "CHILLANLOS_ANGELES": recorrido=200;break;
-            case "CONCEPCIONLOS_ANGELES": recorrido=300;break;
-            case "CONCEPCIONCHILLAN": recorrido=400;break;
-            case "LOS_ANGELESCONCEPCION": recorrido=500;break;
-            case "LOS_ANGELESCHILLAN": recorrido=600;break;
-        }
         af = new AsientoFactory();
         for (int i=0;i<5;i++){
             ab.addAsiento(af.obtenerAsiento(TipodeAsientos.PREMIUM,i));
@@ -32,6 +34,12 @@ public class Bus {
             ab.addAsiento(af.obtenerAsiento(TipodeAsientos.SEMICAMA,i));
         }
     }
+
+    /**
+     * Metodo que se encarga de seleccionar, si es posible, el asiento que se quiere reservar.
+     * @param cualAs Parametro que indica el numero de asiento que se quiere seleccionar
+     * @return Entrega el asiento que se solicito, si es que este existe y esta disponible
+     */
     public Asiento asSelec(int cualAs){
         if (cualAs>52){
             try {

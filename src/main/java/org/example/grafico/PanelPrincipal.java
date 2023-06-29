@@ -9,13 +9,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- * Crea el panel que contendra al panel comprador y panel expendedor en su interior, se encarga de juntar ambos
- * paneles para mostrarse en uno solo para la Ventana
+ * Crea el panel que contendra al panel asientos, panel horarios y panel recorridos en su interior, se encarga de juntar los
+ * paneles para mostrarse en uno solo para la Ventana.
  */
 public class PanelPrincipal extends JPanel implements ActionListener{
     private PanelAsientos pa;
     private PanelHorarios ph;
-    private Reservador com;
+    private Reservador res;
     private PanelRecorridos pr;
     private Bus[][] bus;
     private JComboBox origen,destino,pisoBus;
@@ -28,8 +28,8 @@ public class PanelPrincipal extends JPanel implements ActionListener{
     private int[][][] ocupado;
     private int hora=12,auxCualHorario,auxCualRec,auxElegirH=0,PrecioTotal;
     /**
-     * Metodo constructor que crea instancias del panel comprador y panel expendedor
-     * Ademas define los limites del panel
+     * Metodo constructor que crea instancias del panel asientos, panel horarios y panel recorridos.
+     * Ademas define los limites del panel.
      */
     public PanelPrincipal(){
         this.setLayout(null);
@@ -204,6 +204,10 @@ public class PanelPrincipal extends JPanel implements ActionListener{
         pr.paint(g);
     }
 
+    /**
+     * Metodo que se encarga de procesar los eventos que ocurren dentro del panel.
+     * @param e the event to be processed
+     */
     @Override
     public void actionPerformed(ActionEvent e){
         if (e.getSource()==origen){
@@ -362,11 +366,11 @@ public class PanelPrincipal extends JPanel implements ActionListener{
             for (int k=0;k<53;k++){
                 if (ocupado[auxCualRec][auxCualHorario][k]==1){
                     try {
-                        com = new Reservador(bus[auxCualRec][auxCualHorario],k);
+                        res = new Reservador(bus[auxCualRec][auxCualHorario],k);
                     } catch (Exception ex) {
                         throw new RuntimeException(ex);
                     }
-                    com.infoAsiento();
+                    res.infoAsiento();
                     asAux = bus[auxCualRec][auxCualHorario].asSelec(k);
                     PrecioTotal = PrecioTotal+asAux.getPrecio();
                     ocupado[auxCualRec][auxCualHorario][k]=2;

@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * Crea la ventana que va a ver el Cliente, contiene el panel principal
+ * Crea la ventana que va a ver el Personal de la empresa, contiene el panel principal
  */
 public class Ventana extends JFrame{
     private PanelPrincipal dp;
@@ -21,6 +21,5 @@ public class Ventana extends JFrame{
         this.setSize(1280,1024);
         setLocationRelativeTo(null);
         this.setVisible(true);
-
     }
 }
